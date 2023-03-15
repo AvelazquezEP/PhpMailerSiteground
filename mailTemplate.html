@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Notification LAIA</title>
+</head>
+
+<style>
+    .container {
+        /* background-color: #001E3E; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50rem;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .emailContainer {
+        height: 70%;
+        width: 90%;
+        padding: 2rem;
+        border-radius: 0.4rem;
+        background-color: #001E3E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+
+    .title,
+    .subtitle {
+        text-align: center;
+    }
+
+    .title {
+        border: 2px solid white;
+        padding: 1rem;
+    }
+
+    .subtitle {
+        margin-bottom: 3rem;
+        font-weight: 700;
+    }
+
+    .leadDetail {
+        text-align: left;
+    }
+
+    .leadDetail>span {
+        font-weight: lighter;
+    }
+
+    .leadDetail {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="emailContainer">
+            <h1 class="title">New Lead.</h1>
+            <p class="subtitle">Hi Ivy, new lead from Eric Price Web Site </p>
+            <div class="leadDetailContainer">
+                <p class="leadDetail"><span>Email:</span> %email%</p>
+                <p class="leadDetail"><span>Name:</span> %name%</p>
+                <p class="leadDetail"><span>Last Name:</span> %lastName%</p>
+                <p class="leadDetail"><span>Phone Number:</span> %mobile%</p>
+                <p class="leadDetail"><span>Comment:</span> %message%</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

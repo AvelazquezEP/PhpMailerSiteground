@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #001e3e;
+    --secondary-color: #ff5e00;
+    --secondary-contrast: #ff5e00;
+    --accent-color: #bfdbf7;
+    --white-color: #ffff;
+    --green-color: #1f7a8c;
+    --black-color: #686868;
+    --second-font: 'Poppins', sans-serif;
+    --primary-font: 'Roboto', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--primary-font);
+}
+
+.headerBackground {
+    background-image:
+        linear-gradient(45deg,
+            rgba(32, 32, 32, 0.9),
+            rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
+}
+
+.cta {
+    background-image:
+        linear-gradient(45deg,
+            rgba(32, 32, 32, 0.9),
+            rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
+}
