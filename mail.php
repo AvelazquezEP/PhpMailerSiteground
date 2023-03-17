@@ -21,7 +21,7 @@ $question = $_POST['message'];
 
 try {
 
-    // Email Template variables
+    // Email Template
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%email%', $email, $message);
     $message = str_replace('%name%', $name, $message);
@@ -35,13 +35,14 @@ try {
     $mail->Host       = 'mail.impresioneslk.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@impresioneslk.com';
-    $mail->Password   = 'Blackveil175';
+    $mail->Password   = '>2#Bp4$21g(4';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
     //Recipients
-    $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');
-    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');    
+
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
