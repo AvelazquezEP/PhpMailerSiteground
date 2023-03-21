@@ -1,11 +1,3 @@
-// const submitForms = () => {
-
-//     var requestDelay = 2000;
-
-//     document.getElementById("FormPhp").submit();
-// }
-
-
 const sendData = () => {
     const firstNamePhp = document.getElementById("first_name").value;
     const lastNamePhp = document.getElementById("last_name").value;
@@ -31,16 +23,6 @@ const sendData = () => {
 }
 
 // #region GetInput Onclick
-
-// const submitSalesforce = () => {
-//     document.getElementById("formSalesforce").submit();
-//     document.getElementById("formSalesforce").submit();
-// }
-
-// const submitPhp = () => {
-//     document.getElementById("FormPhp").submit();
-//     document.getElementById("formSalesforce").submit();
-// }
 
 const getFirstName = () => {
     const first_name = document.getElementById("first_name").value;

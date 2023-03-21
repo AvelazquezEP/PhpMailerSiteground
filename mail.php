@@ -6,11 +6,14 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
+// require "dataBase.php";
 // require 'C:\xampp\htdocs\PHPMailer\vendor\autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
 // Data to send Get from form.js (AJAX with Json)
 $name = $_POST['firstName'];
@@ -30,20 +33,29 @@ try {
     $message = str_replace('%message%', $question, $message);
 
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
-    $mail->Host       = 'mail.impresioneslk.com';
+    
+    // $mail->Host       = 'mail.impresioneslk.com';
+    // $mail->SMTPAuth   = true;
+    // $mail->Username   = 'ventas@impresioneslk.com';
+    // $mail->Password   = 'A2z:gi19q2qd';
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    // $mail->Port       = 465;
+
+    $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'info@impresioneslk.com';
-    $mail->Password   = '>2#Bp4$21g(4';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
-
+    $mail->Username   = 'iquinones@abogadoericprice.com';
+    $mail->Password   = 'Marketing700!';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
+    
     //Recipients
-    $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');    
+    $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');    
 
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
+    // $mail->addAddress('support56@abogadoericprice.com', 'Carolina');
 
     //Content
     $mail->isHTML(true);
@@ -52,6 +64,9 @@ try {
     $mail->AltBody = 'Sending email';
 
     $mail->send();
-} catch (Exception $e) {
+
+    echo "Send";
+
+}  catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

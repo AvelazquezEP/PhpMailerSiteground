@@ -1,0 +1,12 @@
+[17-Mar-2023 21:58:01 UTC] PHP Parse error:  syntax error, unexpected 'i' (T_STRING), expecting ';' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 57
+[17-Mar-2023 22:37:04 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 22
+[21-Mar-2023 16:20:54 UTC] PHP Fatal error:  require(): Failed opening required 'dataBase.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 9
+[21-Mar-2023 16:22:56 UTC] PHP Fatal error:  require(): Failed opening required 'dataBase.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 9
+[21-Mar-2023 16:29:10 UTC] PHP Fatal error:  require(): Failed opening required 'dataBase.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 9
+[21-Mar-2023 16:30:23 UTC] PHP Fatal error:  require(): Failed opening required '/dataBase.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 9
+[21-Mar-2023 17:01:05 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/ericp138.sg-host.com/public_html/dataBase.php on line 28
+[21-Mar-2023 17:01:25 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/ericp138.sg-host.com/public_html/dataBase.php on line 28
+[21-Mar-2023 17:02:14 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/ericp138.sg-host.com/public_html/dataBase.php on line 28
+[21-Mar-2023 17:03:35 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/ericp138.sg-host.com/public_html/dataBase.php on line 13
+[21-Mar-2023 17:05:30 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/ericp138.sg-host.com/public_html/dataBase.php on line 13
+[21-Mar-2023 17:51:58 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 70
