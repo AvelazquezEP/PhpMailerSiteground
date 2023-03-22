@@ -35,3 +35,11 @@ body {
             rgba(32, 32, 32, 0.9),
             rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
 }
+
+.testimonials>figure:nth-child(even) {
+    background-color: wheat;
+}
+
+.testimonials>figure:nth-child(odd) {
+    background-color: #001E3E;
+}
