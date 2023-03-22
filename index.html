@@ -111,11 +111,13 @@
                 </h2>
                 <div class="flex flex-row gap-4 items-center mt-4 lg:flex-col lg:items-start">
                     <button
+                    name="phoneNumber"
                         class="w-11/12 lg:w-2/6 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-2 px-2 rounded">
                         <a href="tel:(855)662-2772" class="text-[1.1rem]"><i class="fa-solid fa-phone"></i>
                             (855) 662-2772</a>
                     </button>
                     <button
+                    name="contactButton"
                         class="w-11/12 lg:w-2/6 border border-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-2 rounded">
                         <a href="#Contacto" class="text-[1.1rem]]">
                             Contactanos hoy
@@ -217,7 +219,9 @@
             </div>
         </div>
         <div class="flex flex-col items-center">
-            <button class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-8 mt-4 rounded">
+            <button
+            name="phoneNumber"
+            class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-8 mt-4 rounded">
                 <a href="servicios/servicios.html" class="text-2xl">Ver mas servicios &#8594;</a>
             </button>
         </div>
@@ -290,10 +294,12 @@
                     inmigración. Pide tu consulta gratuita
                     con nosotros hoy.</p>
                 <button
+                name="phoneNumber"
                     class="mx-auto w-11/12 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 lg:py-3 px-8 mt-4 rounded lg:w-3/4 2xl:w-3/5">
                     <a href="tel:(855)662-2772" class="text-2xl"><i class="fa-solid fa-phone"></i> (855) 662-2772</a>
                 </button>
                 <button
+                name="contactButton"
                     class="mx-auto w-11/12 bg-white hover:bg-orange-400 hover:text-white text-gray-900 font-bold py-2 lg:py-3 px-8 mt-4 rounded lg:w-3/4 2xl:w-3/5">
                     <a href="#Contacto" class="text-2xl">Consulta gratis &#8594;</a>
                 </button>
@@ -806,10 +812,17 @@
                 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
                     id="formSalesforce" onsubmit="sendData()">
 
-                    <!-- INPUT HIDDEN / DON'T DELETE -->
+                    <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
+                    <label type=hidden for="oid">Nombre</label>
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
-                    <input type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html">
-                    <input type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
+
+                    <label type=hidden for="retURL">Nombre</label>
+                    <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html">
+
+                    <label type=hidden for="00N5f00000SB1Ws">Nombre</label>
+                    <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
+
+                    <label type=hidden for="lead_source">Nombre</label>
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
 
                     <div class="flex flex-col gap-8">
@@ -916,11 +929,9 @@
                         </div>
                     </div>
                     <div class="text-center mt-8">
-                        <!-- <button onclick="submitForms()" id="ButtonSend"
-                            class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-2xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border shadow-sm border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                            Enviar
-                        </button> -->
-                        <button type="submit" id="ButtonSend"
+                        <button
+                        name="sendButton"
+                        type="submit" id="ButtonSend"
                             class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Enviar
                         </button>
