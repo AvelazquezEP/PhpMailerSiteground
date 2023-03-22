@@ -19,10 +19,14 @@ body {
 }
 
 .headerBackground {
+    /* background-image: url(images/blueBG.png); */
     background-image:
         linear-gradient(45deg,
             rgba(32, 32, 32, 0.9),
-            rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
+            rgba(22, 22, 22, 0.9)), url(images/blueBG.png);
+            /* rgba(22, 22, 22, 0.9)), url(images/lawCover.webp); */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .cta {
