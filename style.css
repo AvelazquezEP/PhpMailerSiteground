@@ -37,9 +37,9 @@ body {
 }
 
 .testimonials>figure:nth-child(even) {
-    background-color: wheat;
+    background-color: #001E3E;
 }
 
 .testimonials>figure:nth-child(odd) {
-    background-color: #001E3E;
+    background-color: rgb(233, 166, 103);
 }

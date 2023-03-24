@@ -22,9 +22,9 @@ document.addEventListener("scroll", function () {
         }
         header.classList.add("shadow");
         navcontent.classList.remove("bg-gray-100");
-        navcontent.classList.add("bg-white");
+        navcontent.classList.add("bg-gray-900"); //no cambiar esta linea: es el fondo del navbar
     } else {
-        header.classList.remove("bg-white");
+        header.classList.remove("bg-gray-900");
         // navaction.classList.remove("gradient");
         // navaction.classList.add("bg-white");
         // navaction.classList.remove("text-white");
@@ -36,7 +36,7 @@ document.addEventListener("scroll", function () {
         }
 
         header.classList.remove("shadow");
-        navcontent.classList.remove("bg-white");
-        navcontent.classList.add("bg-gray-100");
+        navcontent.classList.remove("bg-gray-900");
+        navcontent.classList.add("bg-gray-900");
     }
 });
