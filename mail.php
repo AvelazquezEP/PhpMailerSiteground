@@ -35,13 +35,6 @@ try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
-    
-    // $mail->Host       = 'mail.impresioneslk.com';
-    // $mail->SMTPAuth   = true;
-    // $mail->Username   = 'ventas@impresioneslk.com';
-    // $mail->Password   = 'A2z:gi19q2qd';
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    // $mail->Port       = 465;
 
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
