@@ -36,97 +36,99 @@
 <body class="bg-gray-50 leading-normal">
 
     <!-- HEADER -->
-    <header class="headerBackground" id="Header">
+    <header class="" id="Header">
 
-        <nav id="header" class="w-full z-30 top-0">
-            <div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2 max-w-screen-xl sm:py-5">
-                <div class="pl-4 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="/images/EricpriceLogo-white.svg" class="h-9 mr-2 sm:h-9" alt="Eric Price Logo" />
-                    </a>
-                </div>
-                <div class="block lg:hidden pr-4">
-                    <button id="nav-toggle"
+        <div class="headerBackground">
+            <nav id="header" class="w-full z-30 top-0">
+                <div
+                    class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2 max-w-screen-xl sm:py-5">
+                    <div class="pl-4 flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="/images/EricpriceLogo-white.svg" class="h-9 mr-2 sm:h-9" alt="Eric Price Logo" />
+                        </a>
+                    </div>
+                    <div class="block lg:hidden pr-4">
+                        <button id="nav-toggle"
                         class="flex items-center p-1 text-white hover:text-orange-200 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         <i class="fa-solid fa-bars text-2xl">
                             <title>Menu</title>
                         </i>
                     </button>
+                    </div>
+                    <div class="w-full flex-grow lg:flex bg-gray-900 lg:items-center lg:w-auto hidden lg:bg-transparent mt-2 lg:mt-0 p-4 lg:p-0 z-20"
+                        id="nav-content">
+                        <ul class="list-reset lg:flex justify-end flex-1 items-center text-white">
+                            <li class="mr-3">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Servicios">Services</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Nosotros">About Us</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Equipo">Our Team</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#FAQ">FAQ</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Testimonios">Testimonials</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Blog">Blog</a>
+                            </li>
+                            <li class="mr-1">
+                                <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
+                                    href="#Contacto">Contact</a>
+                            </li>
+                            <li class="mr-3">
+                                <a class="inline-block no-underline bg-orange-400 hover:bg-orange-500 rounded hover:text-gray-50 hover:text-underline py-2 px-4 lg:text-white "
+                                    href="/index.html">Español</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="w-full flex-grow lg:flex bg-gray-900 lg:items-center lg:w-auto hidden lg:bg-transparent mt-2 lg:mt-0 p-4 lg:p-0 z-20"
-                    id="nav-content">
-                    <ul class="list-reset lg:flex justify-end flex-1 items-center text-white">
-                        <li class="mr-3">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="index.html">Home</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Servicios">Services</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Nosotros">About Us</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Equipo">Our Team</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#FAQ">FAQ</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Testimonios">Testimonials</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Blog">Blog</a>
-                        </li>
-                        <li class="mr-1">
-                            <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                href="#Contacto">Contact</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block no-underline bg-orange-400 hover:bg-orange-500 rounded hover:text-gray-50 hover:text-underline py-2 px-4 lg:text-white "
-                                href="/index.html">Español</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
-        </nav>
+                <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+            </nav>
 
-        <div
-            class="flex flex-col items-center lg:justify-around lg:flex-row shadow-lg px-4 mx-auto max-w-screen-xl lg:px-6">
-            <div class="lg:w-1/2 pt-12 text-white" data-aos="fade-right">
-                <span class="text-xl text-gray-300">Your trusted lawyer</span>
-                <h1 class="text-4xl leading-10 mt-8 font-bold">
-                    Lawyer Eric Price will fight for you
-                </h1>
-                <h2 class="mt-8 text-gray-100 text-2xl font-light">
-                    Making their dreams come true, helping thousands of people with their migratory procedures.
-                </h2>
-                <div class="flex flex-row gap-4 items-center mt-4 lg:flex-col lg:items-start">
-                    <button
+            <div
+                class="flex flex-col items-center lg:justify-around lg:flex-row shadow-lg px-4 mx-auto max-w-screen-xl lg:px-6">
+                <div class="lg:w-1/2 pt-12 text-white" data-aos="fade-right">
+                    <span class="text-xl text-gray-300">Your trusted lawyer</span>
+                    <h1 class="text-4xl leading-10 mt-8 font-bold">
+                        Lawyer Eric Price will fight for you
+                    </h1>
+                    <h2 class="mt-8 text-gray-100 text-2xl font-light">
+                        Making their dreams come true, helping thousands of people with their migratory procedures.
+                    </h2>
+                    <div class="flex flex-row gap-4 items-center mt-4 lg:flex-col lg:items-start">
+                        <button
                         class="w-11/12 lg:w-2/6 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-2 px-2 rounded">
                         <a href="tel:(855)662-2772" class="text-[1.1rem]"><i class="fa-solid fa-phone"></i>
                             (855) 662-2772</a>
                     </button>
-                    <button
+                        <button
                         class="w-11/12 lg:w-2/6 border border-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-2 rounded">
                         <a href="#Contacto" class="text-[1.1rem]]">
                             Contact us
                         </a>
                     </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-up">
+                    <img src="images/EP_Website-01.png" alt="Eric Price Picture" class="w-[36rem] mx-auto">
                 </div>
             </div>
-            <div class="lg:w-1/2" data-aos="fade-up">
-                <img src="images/EP_Website-01.png" alt="Eric Price Picture" class="w-[36rem] mx-auto">
-            </div>
         </div>
-
         <div class=" w-screen text-center bg-gray-100">
             <div
                 class="flex flex-col justify-around items-center text-gray-500 p-4 gap-10 md:flex-row mx-auto max-w-screen-xl sm:py-16 lg:px-6">
@@ -148,6 +150,22 @@
                     <p class="text-xl">Deportations arrested</p>
                 </div>
             </div>
+        </div>
+
+        <div style="white-space:nowrap;" class="flex flex-row overflow-x-scroll">
+            <img src="/images/PhotoStrip/PhotoS-1.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-2.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-3.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-4.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-5.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-6.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-7.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-8.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-9.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-10.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-11.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-12.png" alt="Photo Strip" class="w-full h-[190px]">
+            <img src="/images/PhotoStrip/PhotoS-13.png" alt="Photo Strip" class="w-full h-[190px]">
         </div>
 
     </header>
@@ -567,10 +585,10 @@
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
-                            <img class="w-9 h-9 rounded-full"
+                            <!-- <img class="w-9 h-9 rounded-full"
                                 src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/member3.jpg"
-                                alt="profile picture">
-                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                alt="profile picture"> -->
+                            <div class="space-y-0.5 font-medium text-center">
                                 <div class="text-white">Lorraine Perez</div>
                                 <div class="text-sm font-light text-gray-50 dark:text-gray-400">
                                     Los Angeles
@@ -592,10 +610,10 @@
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
-                            <img class="w-9 h-9 rounded-full"
+                            <!-- <img class="w-9 h-9 rounded-full"
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                                alt="profile picture">
-                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                alt="profile picture"> -->
+                            <div class="space-y-0.5 font-medium text-center">
                                 <div>Oscar Guadron</div>
                                 <div class="text-sm font-light text-gray-500 dark:text-gray-400">
                                     Orange County
@@ -618,10 +636,10 @@
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
-                            <img class="w-9 h-9 rounded-full"
+                            <!-- <img class="w-9 h-9 rounded-full"
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                                alt="profile picture">
-                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                alt="profile picture"> -->
+                            <div class="space-y-0.5 font-medium text-center">
                                 <div class="text-white lg:text-black">Hugo Vergara</div>
                                 <div class="text-sm font-light text-gray-50 lg:text-gray-500">
                                     Chicago
@@ -645,10 +663,10 @@
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
-                            <img class="w-9 h-9 rounded-full"
+                            <!-- <img class="w-9 h-9 rounded-full"
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-                                alt="profile picture">
-                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                alt="profile picture"> -->
+                            <div class="space-y-0.5 font-medium text-center">
                                 <div class="lg:text-white">Roberto Villavicencio</div>
                                 <div class="text-sm font-light text-gray-500 lg:text-gray-50 dark:text-gray-400">
                                     Los Angeles
