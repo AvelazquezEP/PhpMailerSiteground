@@ -7,7 +7,7 @@ const sendData = () => {
 
     $.ajax({
         type: 'POST',
-        // url: 'mail.php',
+        // the next line can change for directory url.
         url: 'https://ericp138.sg-host.com/mail.php',
         data: {
             firstName: firstNamePhp,
