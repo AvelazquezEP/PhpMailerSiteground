@@ -830,13 +830,14 @@
         </p>
         <section class="bg-gray-50">
             <div class="px-4 mx-auto  max-w-screen-md">
-                <!-- <form action="" onsubmit="" class="space-y-8"> -->
-                <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
-                    id="formSalesforce" onsubmit="sendData()">
+                <!-- <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
+                    id="formSalesforce" onsubmit="sendData()"> -->
+                <form action="mail.php" method="POST" id="formSalesforce" onsubmit="sendData()">
 
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
-                    <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html">
+                    <input type=hidden type=hidden name="retURL" value="https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB">
+                    <!-- <input type=hidden type=hidden name="retURL" value="" id="returnValue"> -->
                     <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
 
@@ -934,6 +935,13 @@
                             class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Enviar
                         </button>
+                        <!-- <button
+                        name="sendButton"
+                        id="ButtonSend"
+                        onclick="startScheduler()"
+                            class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                            Enviar
+                        </button> -->
                     </div>
                 </form>
             </div>

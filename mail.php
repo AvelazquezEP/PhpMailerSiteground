@@ -46,7 +46,7 @@ try {
     //Recipients
     $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');    
 
-    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
     // $mail->addAddress('support56@abogadoericprice.com', 'Carolina');
 
@@ -58,7 +58,8 @@ try {
 
     $mail->send();
 
-    echo "Send";
+    // header("https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
+    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
 
 }  catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

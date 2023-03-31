@@ -1,0 +1,26 @@
+[1mdiff --git a/form.js b/form.js[m
+[1mindex 0b7ecac..91d7127 100644[m
+[1m--- a/form.js[m
+[1m+++ b/form.js[m
+[36m@@ -17,7 +17,19 @@[m [mconst sendData = () => {[m
+             message: messagePhp,[m
+         },[m
+         success: function () {[m
+[31m-            // console.log("Enviado pa");[m
+         }[m
+     });[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mconst startScheduler = () => {[m[41m[m
+[32m+[m[32m    const firstNamePhp = document.getElementById("first_name").value;[m[41m[m
+[32m+[m[32m    const lastNamePhp = document.getElementById("last_name").value;[m[41m[m
+[32m+[m[32m    const emailPhp = document.getElementById("email").value;[m[41m[m
+[32m+[m[32m    const phonePhp = document.getElementById("mobile").value;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    // const returnInput = document.getElementById('returnValue');[m[41m[m
+[32m+[m[32m    const urlScheduler = 'https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB' + '&a2=' + firstNamePhp + '&a3=' + lastNamePhp + '&a5=' + emailPhp + '&a6=' + phonePhp;[m[41m[m
+[32m+[m[32m    // returnInput.value = urlScheduler;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    location.href = 'https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB' + '&a2=' + firstNamePhp + '&a3=' + lastNamePhp + '&a5=' + emailPhp + '&a6=' + phonePhp;[m[41m[m
+ }[m
+\ No newline at end of file[m
