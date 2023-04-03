@@ -22,6 +22,9 @@ $email = $_POST['email'];
 $number = $_POST['phone'];
 $question = $_POST['message'];
 
+
+$strName = (string)$name;
+
 try {
 
     // Email Template
@@ -58,8 +61,10 @@ try {
 
     $mail->send();
 
-    // header("https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
-    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
+// header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK"."&a2=".$name.".aspx?r=".$frvalue."&s=".$fsvalue);
+      header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
+      exit;
 
 }  catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
