@@ -18,3 +18,8 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 65
+[03-Apr-2023 16:13:46 UTC] PHP Fatal error:  Uncaught Error: Object of class PHPMailer\PHPMailer\PHPMailer could not be converted to string in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:70
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 70
+[03-Apr-2023 16:17:08 UTC] PHP Parse error:  syntax error, unexpected 'strval' (T_STRING), expecting ')' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 70

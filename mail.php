@@ -21,6 +21,7 @@ $lastNamec = $_POST['lastName'];
 $emailc = $_POST['email'];
 $numberc = $_POST['phone'];
 $questionc = $_POST['message'];
+$locationc = $_POST['00N5f00000SB1X0'];
 
 // Data to send Get from index.html (CONTACT FORM)
 $name = $_POST['first_name'];
@@ -28,8 +29,19 @@ $lastName = $_POST['last_name'];
 $email = $_POST['email'];
 $number = $_POST['mobile'];
 $question = $_POST['message'];
+$location = $_POST['00N5f00000SB1X0'];
+$language = $_POST['00N5f00000SB1Ws'];
+$sms = $_POST['00N5f00000SB1XU'];
 
-$strName = (string)$name;
+// Convert inputs to Sting
+$strName = strval($name);
+$strlastName = strval($lastName);
+$stremail = strval($email);
+$strnumber = strval($number);
+$strquestion = strval($question);
+$strlocation = strval($location);
+$strlanguage = strval($language);
+$strsms = strval($sms);
 
 try {
 
@@ -45,15 +57,23 @@ try {
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
 
-    $mail->Host       = 'smtp.office365.com';
+    // $mail->Host       = 'smtp.office365.com';
+    // $mail->SMTPAuth   = true;
+    // $mail->Username   = 'iquinones@abogadoericprice.com';
+    // $mail->Password   = 'Marketing700!';
+    // $mail->SMTPSecure = 'tls';
+    // $mail->Port       = 587;
+
+    $mail->Host       = 'mail.impresioneslk.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'iquinones@abogadoericprice.com';
-    $mail->Password   = 'Marketing700!';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
-    
+    $mail->Username   = 'info@impresioneslk.com';
+    $mail->Password   = 'l34%x#18;F#5';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+
     //Recipients
-    $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');    
+    $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');
+    // $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');
 
     // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
@@ -62,16 +82,14 @@ try {
     //Content
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to form AEP Google PPC';
-    $mail->msgHTML($message);    
+    $mail->msgHTML($message);
     $mail->AltBody = 'Sending email';
 
     $mail->send();
 
-    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
-// header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK"."&a2=".$name.".aspx?r=".$frvalue."&s=".$fsvalue);
-      header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK");
-      exit;
-
-}  catch (Exception $e) {
+    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation);
+    exit;
+} catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
