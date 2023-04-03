@@ -15,13 +15,19 @@ $mail = new PHPMailer(true);
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-// Data to send Get from form.js (AJAX with Json)
-$name = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$number = $_POST['phone'];
-$question = $_POST['message'];
+// Data to send Get from form.js (AJAX with Json) I change the name with the letter C 
+$namec = $_POST['firstName'];
+$lastNamec = $_POST['lastName'];
+$emailc = $_POST['email'];
+$numberc = $_POST['phone'];
+$questionc = $_POST['message'];
 
+// Data to send Get from index.html (CONTACT FORM)
+$name = $_POST['first_name'];
+$lastName = $_POST['last_name'];
+$email = $_POST['email'];
+$number = $_POST['mobile'];
+$question = $_POST['message'];
 
 $strName = (string)$name;
 

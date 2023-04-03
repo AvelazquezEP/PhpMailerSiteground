@@ -832,7 +832,7 @@
             <div class="px-4 mx-auto  max-w-screen-md">
                 <!-- <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
                     id="formSalesforce" onsubmit="sendData()"> -->
-                <form action="mail.php" method="POST" id="formSalesforce" onsubmit="sendData()">
+                <form action="mail.php" method="POST" id="formSalesforce">
 
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
@@ -901,7 +901,7 @@
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                                 Tu duda
                             </label>
-                            <textarea id="message" rows="6"
+                            <textarea id="message" name="message" rows="6"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                                 placeholder="Me pueden ayudar con mi proceso migratorio..."></textarea>
                         </div>

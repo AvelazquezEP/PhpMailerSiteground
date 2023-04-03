@@ -7,7 +7,6 @@ const sendData = () => {
 
     $.ajax({
         type: 'POST',
-        // the next line can change for directory url.
         url: 'https://ericp138.sg-host.com/mail.php',
         data: {
             firstName: firstNamePhp,
@@ -21,6 +20,8 @@ const sendData = () => {
     });
 }
 
+// #region Test some functions
+
 // const startScheduler = () => {
 //     const firstNamePhp = document.getElementById("first_name").value;
 //     const lastNamePhp = document.getElementById("last_name").value;
@@ -33,3 +34,5 @@ const sendData = () => {
 
 //     location.href = 'https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB' + '&a2=' + firstNamePhp + '&a3=' + lastNamePhp + '&a5=' + emailPhp + '&a6=' + phonePhp;
 // }
+
+// #endregion Test some functions
