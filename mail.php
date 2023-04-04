@@ -47,6 +47,7 @@ try {
 
     // Email Template
     $message = file_get_contents('mailTemplate.html');
+    $message = str_replace('%language%', $language, $message);
     $message = str_replace('%email%', $email, $message);
     $message = str_replace('%name%', $name, $message);
     $message = str_replace('%lastName%', $lastName, $message);
