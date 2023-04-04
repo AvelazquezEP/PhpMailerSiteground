@@ -87,11 +87,11 @@ try {
 
     $mail->send();
 
-    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
-    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
+    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
     
     exit;
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    header("Location: https://ericp138.sg-host.com/sorry.html");    
+    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
 }
