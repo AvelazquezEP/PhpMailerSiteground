@@ -57,23 +57,28 @@ try {
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
 
-    // $mail->Host       = 'smtp.office365.com';
-    // $mail->SMTPAuth   = true;
+    $mail->Host       = 'smtp.office365.com';
+    $mail->SMTPAuth   = true;
     // $mail->Username   = 'iquinones@abogadoericprice.com';
     // $mail->Password   = 'Marketing700!';
-    // $mail->SMTPSecure = 'tls';
-    // $mail->Port       = 587;
+    $mail->Username   = 'support56@abogadoericprice.com';
+    $mail->Password   = '473ECarnegie!';
+    // $mail->Username   = 'avelazquez2873@LosAngelesImmigration.onmicrosoft.com';
+    // $mail->Password   = '700Flower!';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
 
-    $mail->Host       = 'mail.impresioneslk.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'info@impresioneslk.com';
-    $mail->Password   = 'l34%x#18;F#5';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    // $mail->Host       = 'mail.impresioneslk.com';
+    // $mail->SMTPAuth   = true;
+    // $mail->Username   = 'info@impresioneslk.com';
+    // $mail->Password   = 'l34%x#18;F#5';
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    // $mail->Port       = 465;
 
     //Recipients
-    $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');
+    $mail->setFrom('support56@abogadoericprice.com');
     // $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');
+    // $mail->setFrom('info@impresioneslk.com', 'Mailer LAIA');
 
     // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
@@ -88,9 +93,10 @@ try {
     $mail->send();
 
     // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
+    // Form = Test Scheduler (we can fin this in SUMO adminis Settings)
     header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
-    
     exit;
+    
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
