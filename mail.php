@@ -84,11 +84,19 @@ try {
     $mail->AltBody = 'Sending email';
 
     $mail->send();
+    
+    // echo $strlocation;
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber ."&a7=EP-CA-Website");
+    
+    switch($strlocation) {
+      case Los Angeles: header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber ."&a7=EP-CA-Website"); break;
+      case 2: echo "Two"; break;
+      case 3: echo "Three"; break;
+      default: echo "Many"; break;
+    }
 
-    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
-    // Form = Test Scheduler (we can fin this in SUMO adminis Settings)
-    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
-    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber ."&a7=EP-CA-Website");
+    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAACAA2&WhatId=a1n5f0000006fzJAAQ&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=" . $strlocation. "&a8=" . $strlanguage. "&a9=" . $strsms);
     exit;
     
 } catch (Exception $e) {
