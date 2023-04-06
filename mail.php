@@ -89,7 +89,7 @@ try {
     if($meetingType == "Phone"){
         switch ($location) {
             case "Los Angeles":            
-            // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
+            // https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereId=a1b5f000000enBiAAI&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P60rLEAR
                 header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
                 break;
             default:
