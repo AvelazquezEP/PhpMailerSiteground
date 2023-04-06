@@ -101,7 +101,7 @@ try {
             case "Los Angeles":            
                 header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
                 break;
-            case "Orange County":            
+            case "Orange County":
                 header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
                 break;
             case "San Diego":            
