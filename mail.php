@@ -89,7 +89,8 @@ try {
     if($meetingType == "Phone"){
         switch ($location) {
             case "Los Angeles":            
-                header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
+            // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
+                header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=VID_CONFERENCE&WhatId=a1n5f0000006fzJAAQ&sumoapp_WhoId=0055f000007NttK" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
                 break;
             default:
             // IF something wrong
@@ -98,7 +99,7 @@ try {
         }
     }else {
         switch ($location) { //Falta chicago, san berdandino, National
-            case "Los Angeles":            
+            case "Los Angeles":
                 header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website");
                 break;
             case "Orange County":
