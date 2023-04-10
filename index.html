@@ -894,7 +894,7 @@
                             </label>
                             <select id="00N5f00000SB1X0" name="00N5f00000SB1X0" title="Location" class="shadow-sm
                         bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500
-                            focus:border-primary-500 block w-full p-2.5" required>
+                            focus:border-primary-500 block w-full p-2.5" required onchange="changeLocation()">
                                 <option value="">--None--</option>
                                 <option value="Chicago">Chicago</option>
                                 <option value="Los Angeles">Los Angeles</option>
@@ -932,7 +932,7 @@
                         </div>
                         <div>
                             <textarea name="policy" cols="30" rows="3"
-                                class=" block p-2.5 border-none resize-none
+                                class="block p-2.5 border-none resize-none
                                 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300
                                 focus:ring-primary-500 focus:border-primary-500">By entering my mobile number and checking this box I agree to receive case status updates, meeting updates, and legal news notifications from Abogado Eric Price Los Angeles Immigration Attorneys. Message frequency varies. Text HELP to 94289 for help. Text STOP to 94289 to end. Msg & data rates may apply. By opting in, I authorize Abogado Eric Price Los Angeles Immigration Attorneys to deliver SMS messages using an automatic telephone dialing system and I understand that I am not required to opt in as a condition of purchasing any property, goods, or services. By leaving this box unchecked you will not be opted in for SMS messages at this time. Click to read</textarea>
                         </div>
@@ -940,15 +940,18 @@
                             <label for="" class="block mb-2 text-sm font-medium text-gray-900">
                                 Tipo de cita
                             </label>
-                            <div class="radioGroup">
-                                <input type="radio" id="meetingType" name="meetingType" name="Phone" value="Phone"
+                            <p hidden id="recordMessage">Message Test</p>
+                            <div id="recordTypeGroup">
+                                <div class="radioGroup">
+                                    <input type="radio" id="meetingType" name="meetingType" name="Phone" value="Phone"
                                     checked="true" />
-                                <label for="Agree">By Phone</label>
-                            </div>
-                            <div class="radioGroup">
-                                <input type="radio" id="meetingType" name="meetingType" name="Person"
+                                    <label for="Agree">Por teléfono</label>
+                                </div>
+                                <div class="radioGroup">
+                                    <input type="radio" id="meetingType" name="meetingType" name="Person"
                                     value="Person" />
-                                <label for="Idisagree">In-Person</label>
+                                    <label for="Idisagree">En Persona</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1171,6 +1174,7 @@
     <script src="js/nav.js"></script>
     <script src="js/smoothScroll.js"></script>
     <script src="js/toggle.js"></script>
+    <script src="js/select.js"></script>
 
     <!-- CSS AOS - Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
