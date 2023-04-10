@@ -44,6 +44,57 @@ $strlocation = strval($location);
 $strlanguage = strval($language);
 $strsms = strval($sms);
 
+// Location codes
+$code = "";
+$LACode = "a1b5f000000eT4OAAU";
+$OCCode = "a1b5f000000eT4PAAU";
+$SDCode = "a1b5f000000eT8bAAE";
+$SMCode = "a1b5f000000eT8gAAE";
+$CHCode = "a1b5f000000enBnAAI";
+// $NCode = "a1b5f000000eT4OAAU"; TODAVIA NO HAY CODIGO
+// $SBCode = "a1b5f000000eT4OAAU"; TODAVIA NO HAY CODIGO
+
+switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
+    case "Los Angeles":
+        $code = $LACode;
+        // return $code;
+        break;
+    case "Orange County":
+        $code = strval($OCCode);
+        break;
+    case "San Diego":
+        $code = strval($SDCode);
+        break;
+    case "San Marcos":
+        $code = strval($SMCode);
+        break;
+    case "Chicago":
+        $code = strval($CHCode);
+        break;
+    case "National":
+        // $code = strval($NCode);
+        break;
+    case "San Bernardino":
+        // $code = strval($SBCode);
+        break;
+    default:
+        $code = strval($LACode);
+        break;
+}
+
+// Location type
+$locationT = "";
+$phone = "VID_CONFERENCE";
+$person = "OUR_LOCATION";
+
+if ($meetingType == "Phone") { //IN-PERSON (Falta chicago, san berdandino, National)
+    $locationT = strval($phone);
+} else {
+    $locationT = strval($person);
+}
+
+$link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+
 try {
 
     // Email Template
@@ -61,18 +112,13 @@ try {
 
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    // $mail->Username   = 'iquinones@abogadoericprice.com';
-    // $mail->Password   = 'Marketing700!';
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '473ECarnegie!';
-    // $mail->Username   = 'avelazquez2873@LosAngelesImmigration.onmicrosoft.com';
-    // $mail->Password   = '700Flower!';
+    $mail->Password   = '473ECarnegie!';    
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     //Recipients
-    $mail->setFrom('support56@abogadoericprice.com');
-    // $mail->setFrom('iquinones@abogadoericprice.com', 'Mailer LAIA');    
+    $mail->setFrom('support56@abogadoericprice.com');    
 
     // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     // $mail->addAddress('support56@abogadoericprice.com', 'Carolina');
@@ -86,54 +132,91 @@ try {
 
     $mail->send();
 
-    if ($strlocation == "Chicago" || $strlocation == "National") {
-        switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
-                case "Chicago":
-                // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website" . "&a8=" . $strlocation);
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-                    break;
-                case "National":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-                    break;
-                case "San Bernardino":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-                    break;                
-                default:
-                    // IF something wrong
-                    header("Location: https://ericp138.sg-host.com/sorry.html");
-                    break;
-            }
-        }
-    } else {
-        if($meetingType == "Phone"){ // BY PHONE
-            header("Location: https://ericp138.sg-host.com/sorry.html");            
-        }else {
-            switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
+    switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
                 case "Los Angeles":
                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website" . "&a8=" . $strlocation);
                     // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-                    $link = redirects($strName);
                     header("Location: " . $link);
                     break;
                 case "Orange County":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    header("Location: " . $link);
                     break;
                 case "San Diego":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    header("Location: " . $link);
                     break;
                 case "San Marcos":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8gAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8gAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    header("Location: " . $link);
                     break;        
                 case "Chicago":
-                    header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBnAAI&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBnAAI&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+                    header("Location: " . $link);
                     break;
                 default:
                 // IF something wrong
                     header("Location: https://ericp138.sg-host.com/sorry.html");
                     break;
             }
-        }
-    }
+
+    // Take the repectve link with parameters
+    
+
+    // if ($strlocation == "Chicago" || $strlocation == "National") {
+    //     switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
+    //             case "Chicago":
+    //             // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website" . "&a8=" . $strlocation);
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             case "National":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             case "San Bernardino":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             default:
+    //                 // IF something wrong
+    //                 header("Location: https://ericp138.sg-host.com/sorry.html");
+    //                 break;
+    //         }
+    //     }
+    // } else { // BY PHONE
+    //     if($meetingType == "Phone"){
+    //         header("Location: https://ericp138.sg-host.com/sorry.html");
+    //     }else {
+    //         switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
+    //             case "Los Angeles":
+    //             // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website" . "&a8=" . $strlocation);
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);                    
+    //                 header("Location: " . $link);
+    //                 break;
+    //             case "Orange County":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             case "San Diego":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             case "San Marcos":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8gAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;        
+    //             case "Chicago":
+    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBnAAI&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
+    //                 header("Location: " . $link);
+    //                 break;
+    //             default:
+    //             // IF something wrong
+    //                 header("Location: https://ericp138.sg-host.com/sorry.html");
+    //                 break;
+    //         }
+    //     }
+    // }
     
     // exit;
     
@@ -142,9 +225,9 @@ try {
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
 }
 
-function redirects ($nameArg)
+function redirects ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
 {
     // Los Angeles
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg;
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
     return $redirectLink;
 }
