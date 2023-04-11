@@ -1,20 +1,36 @@
 const changeLocation = () => {
     var location = document.getElementById('00N5f00000SB1X0').value;
-    var recordTypeGroup = document.getElementById('recordTypeGroup');
-    var recordMessage = document.getElementById('recordMessage');
+    const meetingTypePhone = document.getElementById('meetingTypePhone');
+    const meetingTypePerson = document.getElementById('meetingTypePerson');
+
+    const phoneTxt = document.getElementById('phoneTxt');
+
 
     // console.log(location);
 
-    if (location == "Chicago" || location == "National") {
+    if (location == "San Bernardino") {
+        meetingTypePhone.checked = false;
+        meetingTypePerson.checked = true;
 
-        recordMessage.removeAttribute("hidden", "");
-        recordMessage.innerHTML = `En ${location} se le asignara en automatico el tipo de cita que este disponible.`
-        recordTypeGroup.setAttribute("hidden", "");
+        meetingTypePhone.disabled = true;
+        document.getElementById("personTxt").style.color = 'black';
+        document.getElementById("phoneTxt").style.color = 'gray';
+        // phoneTxt.classList.add("text-gray-400")
+
+    } else if (location == "National") {
+        meetingTypePhone.checked = true;
+        meetingTypePerson.checked = false;
+
+        meetingTypePerson.disabled = true;
+        document.getElementById("personTxt").style.color = 'gray';
+        document.getElementById("phoneTxt").style.color = 'black';
 
     } else {
-        recordMessage.setAttribute("hidden", "");
-        recordMessage.innerHTML = ""
-        recordTypeGroup.removeAttribute("hidden");
+        meetingTypePhone.disabled = false;
+        meetingTypePerson.disabled = false;
+
+        document.getElementById("personTxt").style.color = 'black';
+        document.getElementById("phoneTxt").style.color = 'black';
     }
 
 }

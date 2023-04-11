@@ -33,3 +33,5 @@ Stack trace:
 [06-Apr-2023 15:18:40 UTC] PHP Parse error:  syntax error, unexpected '  case' (T_STRING), expecting case (T_CASE) or default (T_DEFAULT) or '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 99
 [06-Apr-2023 15:19:57 UTC] PHP Parse error:  syntax error, unexpected '  case' (T_STRING), expecting case (T_CASE) or default (T_DEFAULT) or '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 99
 [06-Apr-2023 15:21:07 UTC] PHP Parse error:  syntax error, unexpected '  case' (T_STRING), expecting ':' or '{' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 99
+[11-Apr-2023 00:15:04 UTC] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 141
+[11-Apr-2023 00:16:16 UTC] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 141
