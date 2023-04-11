@@ -3,23 +3,20 @@ const changeLocation = () => {
     const meetingTypePhone = document.getElementById('meetingTypePhone');
     const meetingTypePerson = document.getElementById('meetingTypePerson');
 
-    // console.log(location);
-
     if (location == "San Bernardino") {
-        meetingTypePhone.checked = false;
-        meetingTypePerson.checked = true;
+        meetingTypePhone.checked = false; //The radioButton (Phone) become false
+        meetingTypePerson.checked = true; //The radioButton (Person) become true
 
-        meetingTypePhone.disabled = true;
-        document.getElementById("personTxt").style.color = 'black';
-        document.getElementById("phoneTxt").style.color = 'gray';
-        // phoneTxt.classList.add("text-gray-400")
+        meetingTypePhone.disabled = true; //need to change to disabled
+        document.getElementById("personTxt").style.color = 'black'; //Change the text color (label in radiobutton) for the active radiobutton
+        document.getElementById("phoneTxt").style.color = 'gray'; //Change the text color (label in radiobutton) for the disable radiobutton
 
     } else if (location == "National") {
-        meetingTypePhone.checked = true;
-        meetingTypePerson.checked = false;
+        meetingTypePhone.checked = true; //The radioButton (Phone) become true
+        meetingTypePerson.checked = false; //the radioButton (Person) become false
 
         meetingTypePerson.disabled = true;
-        document.getElementById("personTxt").style.color = 'gray';
+        document.getElementById("personTxt").style.color = 'gray'; //Change the text color (label in radiobutton) for the active radiobutton
         document.getElementById("phoneTxt").style.color = 'black';
 
     } else {

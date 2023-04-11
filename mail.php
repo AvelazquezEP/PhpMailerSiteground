@@ -111,14 +111,14 @@ try {
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '473ECarnegie!';    
+    $mail->Password   = '473ECarnegie!';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     //Recipients
-    $mail->setFrom('support56@abogadoericprice.com');    
+    $mail->setFrom('support56@abogadoericprice.com');
 
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');    
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
@@ -128,8 +128,9 @@ try {
     $mail->AltBody = 'Sending email';
 
     // Enviar correo
-    $mail->send(); 
+    $mail->send();
 
+    // Además, una vez que lo hizo, noté que el formulario de admisión no se agrega a la cuenta en Salesforce
     try {
         header("Location: " . $link);
         exit;
@@ -137,7 +138,7 @@ try {
         header("Location: https://ericp138.sg-host.com/sorry.html");
         exit;
     }    
-    
+
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
