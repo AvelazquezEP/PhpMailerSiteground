@@ -3,9 +3,6 @@ const changeLocation = () => {
     const meetingTypePhone = document.getElementById('meetingTypePhone');
     const meetingTypePerson = document.getElementById('meetingTypePerson');
 
-    const phoneTxt = document.getElementById('phoneTxt');
-
-
     // console.log(location);
 
     if (location == "San Bernardino") {

@@ -6,8 +6,6 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
-// require "dataBase.php";
-// require 'C:\xampp\htdocs\PHPMailer\vendor\autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -15,7 +13,7 @@ $mail = new PHPMailer(true);
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-// Data to send Get from form.js (AJAX with Json) I change the name with the letter C 
+// Data to send Get from form.js (AJAX with Json) I change the name with the letter C
 $namec = $_POST['firstName'];
 $lastNamec = $_POST['lastName'];
 $emailc = $_POST['email'];
@@ -87,16 +85,13 @@ $locationT = "";
 $phone = "VID_CONFERENCE";
 $person = "OUR_LOCATION";
 
-if ($meetingType == "Phone") { //IN-PERSON (san berdandino, National)
+if ($meetingType == "Phone") { //Phone
     $locationT = strval($phone);
     $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else {
+} else { //Person
     $locationT = strval($person);
     $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 }
-
-// $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-// $linkVirtual = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
 try {
 
@@ -123,8 +118,7 @@ try {
     //Recipients
     $mail->setFrom('support56@abogadoericprice.com');    
 
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-    // $mail->addAddress('support56@abogadoericprice.com', 'Carolina');
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');    
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
@@ -141,34 +135,7 @@ try {
     } catch(Exception $e) {
         header("Location: https://ericp138.sg-host.com/sorry.html");
         exit;
-    }
-    // switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
-    //             case "Los Angeles":
-    //             // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a7=EP-CA-Website" . "&a8=" . $strlocation);
-    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4OAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-    //                 header("Location: " . $link);
-    //                 break;
-    //             case "Orange County":
-    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT4PAAU&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-    //                 header("Location: " . $link);
-    //                 break;
-    //             case "San Diego":
-    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8bAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-    //                 header("Location: " . $link);
-    //                 break;
-    //             case "San Marcos":
-    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000eT8gAAE&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-    //                 header("Location: " . $link);
-    //                 break;        
-    //             case "Chicago":
-    //                 // header("Location: https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=OUR_LOCATION&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBnAAI&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $strName . "&a3=" . $strlastName . "&a5=" . $stremail . "&a6=" . $strnumber . "&a8=" . $strlocation . "&a9=" . $strlanguage . "&a10=" . $strsms);
-    //                 header("Location: " . $link);
-    //                 break;
-    //             default:
-    //             // IF something wrong
-    //                 header("Location: https://ericp138.sg-host.com/sorry.html");
-    //                 break;
-    //         }
+    }    
     
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
