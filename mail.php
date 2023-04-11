@@ -127,7 +127,8 @@ try {
     $mail->msgHTML($message);
     $mail->AltBody = 'Sending email';
 
-    $mail->send();
+    // Enviar correo
+    $mail->send(); 
 
     try {
         header("Location: " . $link);
