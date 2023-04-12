@@ -14,12 +14,15 @@ header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
 // Data to send Get from form.js (AJAX with Json) I change the name with the letter C
-$namec = $_POST['firstName'];
-$lastNamec = $_POST['lastName'];
-$emailc = $_POST['email'];
-$numberc = $_POST['phone'];
-$questionc = $_POST['message'];
-$locationc = $_POST['00N5f00000SB1X0'];
+// $response = array();
+
+
+// $namec = $_POST['firstName'];
+// $lastNamec = $_POST['lastName'];
+// $emailc = $_POST['email'];
+// $numberc = $_POST['phone'];
+// $questionc = $_POST['message'];
+// $locationc = $_POST['00N5f00000SB1X0'];
 
 // Data to send Get from index.html (CONTACT FORM)
 $name = $_POST['first_name'];
@@ -30,7 +33,7 @@ $question = $_POST['message'];
 $location = $_POST['00N5f00000SB1X0'];
 $language = $_POST['00N5f00000SB1Ws'];
 $sms = $_POST['00N5f00000SB1XU'];
-$meetingType = $_POST['meetingType'];
+$meetingTypeP = $_POST['meetingType'];
 
 // Convert inputs to Sting
 $strName = strval($name);
@@ -54,8 +57,7 @@ $CHCode = "a1b5f000000enBnAAI";
 
 switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
     case "Los Angeles":
-        $code = $LACode;
-        // return $code;
+        $code = strval($LACode);        
         break;
     case "Orange County":
         $code = strval($OCCode);
@@ -85,16 +87,7 @@ $locationT = "";
 $phone = "VID_CONFERENCE";
 $person = "OUR_LOCATION";
 
-if ($meetingType == "Phone") { //Phone
-    $locationT = strval($phone);
-    $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else { //Person
-    $locationT = strval($person);
-    $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-}
-
 try {
-
     // Email Template
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%language%', $language, $message);
@@ -130,7 +123,14 @@ try {
     // Enviar correo
     $mail->send();
 
-    // Además, una vez que lo hizo, noté que el formulario de admisión no se agrega a la cuenta en Salesforce
+    if ($meetingTypeP == "VID_CONFERENCE") { //Phone/virtual
+        $locationT = strval($phone);
+        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+    } else { //Person
+        $locationT = strval($person);
+        $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+    }    
+    
     try {
         header("Location: " . $link);
         exit;
@@ -144,16 +144,16 @@ try {
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
 }
 
+
+// Functions to reduirect (Person, local)
 function redirects ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
-{
-    // Los Angeles
+{    
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
     return $redirectLink;
 }
 
 function redirectsVirtual ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
-{
-    // Los Angeles
+{    
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
     return $redirectLink;
 }

@@ -825,7 +825,7 @@
     </div>
 
     <!-- CONTACT FORM -->
-    <div class=" mt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Contacto" data-aos="zoom-in">
+    <div class="mt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Contacto" data-aos="zoom-in">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-90">
             Contacto
         </h2>
@@ -834,15 +834,18 @@
             comunicándote con nosotros hoy.
         </p>
         <section class="bg-gray-50">
-            <div class="px-4 mx-auto  max-w-screen-md">
-                <form action="mail.php" method="POST" id="formSalesforce">
+            <div class="px-4 mx-auto max-w-screen-md">
+
+                <!-- <form action="mail.php" method="POST" id="formSalesforce"> -->
+                <!-- <form action="" method="POST" id="formSalesforce" class="formSalesforce" name="formSalesforce"> -->
+                <form>
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
+                    <!-- <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/mail.php?meetingType=VID_CONFERENCE&first_name=Test&last_name=form&email=test@form.com&mobile=123321&message=test&00N5f00000SB1X0=Los%20Angeles" id="redirectHtml"> -->
+                    <!-- <input type=hidden name="retURL" value=""> -->
                     <!-- <input type=hidden type=hidden name="retURL" value="https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB"> -->
-                    <!-- <input type=hidden type=hidden name="retURL" value="" id="returnValue"> -->
                     <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
-
                     <div class="flex flex-col gap-8">
                         <div>
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">
@@ -948,9 +951,16 @@
                         </div>
                     </div>
                     <div class="text-center mt-8">
+                        <!-- <button
+                        name="sendButton"
+                        type="submit" id="ButtonSend"
+                            class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                            Enviar
+                        </button> -->
                         <button
                         name="sendButton"
                         type="submit" id="ButtonSend"
+                        onclick="sendData()"
                             class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Enviar
                         </button>
@@ -1162,7 +1172,7 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="form.js"></script> -->
+    <script src="form.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/smoothScroll.js"></script>
     <script src="js/toggle.js"></script>
