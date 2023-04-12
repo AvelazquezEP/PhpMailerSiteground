@@ -129,15 +129,19 @@ try {
     } else { //Person
         $locationT = strval($person);
         $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-    }    
-    
-    try {
-        header("Location: " . $link);
-        exit;
-    } catch(Exception $e) {
-        header("Location: https://ericp138.sg-host.com/sorry.html");
-        exit;
-    }    
+    }
+
+    $output = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+    echo $output;
+    // try {
+    //     header("Location: " . $link);
+    //     exit;
+    // } catch(Exception $e) {
+    //     header("Location: https://ericp138.sg-host.com/sorry.html");
+    //     exit;
+    // }
+
+// Mandar pal JQUERY alv    
 
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -145,7 +149,7 @@ try {
 }
 
 
-// Functions to reduirect (Person, local)
+// Functions para redireccionar al Scheduler App (Virtual / person)
 function redirects ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
 {    
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
@@ -155,5 +159,11 @@ function redirects ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailA
 function redirectsVirtual ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
 {    
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
+    return $redirectLink;
+}
+
+function redirectsAjax ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
+{    
+    $redirectLink = $link;
     return $redirectLink;
 }

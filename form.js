@@ -14,8 +14,32 @@ const sendData = () => {
     const person = "OUR_LOCATION";
 
     sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone);
+}
 
-    // #region Ajax para Salesforce
+const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type) => {
+
+    $.ajax({
+        type: 'POST',
+        url: 'mail.php',
+        data: {
+            "00N5f00000SB1Ws": languages,
+            first_name: name,
+            last_name: lastName,
+            mobile: phone,
+            email: mail,
+            message: comment,
+            "00N5f00000SB1X0": place,
+            meetingType: type,
+        },
+        dataType: 'text',
+        success: function (data) {
+            alert(data);
+        }
+    });
+
+}
+
+ // #region Ajax para Salesforce
 
     // if (document.getElementById('gender_Male').checked) {
     //     meetType = "VID_CONFERENCE";
@@ -49,32 +73,3 @@ const sendData = () => {
     //     }
     // });
     // #endregion
-
-}
-
-const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type) => {
-
-    $.ajax({
-        type: 'POST',
-        url: 'mail.php',
-        data: {
-            "00N5f00000SB1Ws": languages,
-            first_name: name,
-            last_name: lastName,
-            mobile: phone,
-            email: mail,
-            message: comment,
-            "00N5f00000SB1X0": place,
-            meetingType: type,
-        },
-        success: function (data) {
-            // window.Locatio
-            // Simulate a mouse click:
-            // window.location.href = "http://www.w3schools.com";
-
-            // Simulate an HTTP redirect:
-            window.location.replace("http://google.com");
-        }
-    });
-
-}
