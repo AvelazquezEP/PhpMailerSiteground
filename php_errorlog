@@ -58,3 +58,9 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 131
+[13-Apr-2023 15:37:22 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 54
+[13-Apr-2023 15:38:31 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 54
+[13-Apr-2023 15:47:21 UTC] PHP Parse error:  syntax error, unexpected 'print' (T_PRINT) in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 162
+[13-Apr-2023 15:50:18 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 166
+[13-Apr-2023 15:52:41 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 167
+[13-Apr-2023 15:54:19 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 166

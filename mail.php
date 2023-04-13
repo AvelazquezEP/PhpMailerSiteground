@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-function sendEmail($language, $email, $name, $lastName, $number, $question)
+function sendEmail($language, $email, $name, $lastName, $number, $question, $link)
 {
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -49,6 +49,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
 
     // Enviar correo
     $mail->send();
+
 }
 
 // Location codes
@@ -94,21 +95,21 @@ function getLocation($locationArg)
 }
 
 // Function to redirect to Virtual
-function redirectsVirtual($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
+function redirectsVirtual($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg)
 {
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg;
     return $redirectLink;
 }
 
 // Function to redirect to In-Person
-function redirects($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
+function redirects($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg)
 {
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg;
     return $redirectLink;
 }
 
 // Necesita de los links en strig
-function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms)
+function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage)
 {
     // Location type
     $locationT = "";
@@ -117,46 +118,50 @@ function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $str
 
     if ($meetingTypeArg == $phone) { //Phone/virtual
         $locationT = strval($phone);
-        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+        return $link;
     } else { //Person
         $locationT = strval($person);
-        $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+        $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+        return $link;
     }
+    
     return $link;
 }
 
+// START TO GET THE RESULT OF THE FUNCTION
 try {
-    // Data from Form on index.html
-    $name = $_POST['first_name'];
-    $lastName = $_POST['last_name'];
-    $email = $_POST['email'];
-    $number = $_POST['mobile'];
-    $question = $_POST['message'];
-    $location = $_POST['00N5f00000SB1X0'];
-    $language = $_POST['00N5f00000SB1Ws'];
-    $sms = $_POST['00N5f00000SB1XU'];
-    $meetingTypeP = $_POST['meetingType'];
+  // Data from Form on index.html
+  $name = $_POST['first_name'];
+  $lastName = $_POST['last_name'];
+  $email = $_POST['email'];
+  $number = $_POST['mobile'];
+  $question = $_POST['message'];
+  $location = $_POST['00N5f00000SB1X0'];
+  $language = $_POST['00N5f00000SB1Ws'];
+  $sms = $_POST['00N5f00000SB1XU'];
+  $meetingTypeP = $_POST['meetingType'];
+
+  // Convert imputs to String
+  $strName = strval($name);
+  $strlastName = strval($lastName);
+  $stremail = strval($email);
+  $strnumber = strval($number);
+  $strquestion = strval($question);
+  $strlocation = strval($location);
+  $strlanguage = strval($language);
+  $strsms = strval($sms);  
+  $code = getLocation($location); //Llamado de la function
 
 
-    // Convert imputs to String
-    $strName = strval($name);
-    $strlastName = strval($lastName);
-    $stremail = strval($email);
-    $strnumber = strval($number);
-    $strquestion = strval($question);
-    $strlocation = strval($location);
-    $strlanguage = strval($language);
-    $strsms = strval($sms);
+  $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
-    // sendEmail($language, $email, $name, $lastName, $number, $question);
+  print $linkRedirect;
 
-    $code = getLocation($location);    
-
-    $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-
-    print strval($linkRedirect);
+//   $newlink = sendEmail($language, $email, $name, $lastName, $number, $question, $linkRedirect);
+//   print strval($newlink);
 
     
 } catch (Exception $e) {
-    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
+    header("Location: https://ericp138.sg-host.com/sorry.html"); // <--- show this site when something is wrong
 }
