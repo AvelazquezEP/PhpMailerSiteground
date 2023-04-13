@@ -33,7 +33,7 @@ const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type)
         },
         dataType: 'text',
         success: function (data) {
-            alert(data);
+            window.location.replace(data);
         }
     });
 

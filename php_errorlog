@@ -43,3 +43,18 @@ Stack trace:
 #0 /home/customer/www/ericp138.sg-host.com/public_html/mail.php(143): redirectsAjax()
 #1 {main}
   thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 165
+[12-Apr-2023 22:45:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function redirectsVirtual() in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 128
+[12-Apr-2023 22:49:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function redirectsVirtual() in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 128
+[12-Apr-2023 22:54:45 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/customer/www/ericp138.sg-host.com/public_html/redirect.php on line 5
+[12-Apr-2023 22:56:53 UTC] PHP Parse error:  syntax error, unexpected 'print' (T_PRINT) in /home/customer/www/ericp138.sg-host.com/public_html/redirect.php on line 5
+[12-Apr-2023 22:57:46 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/customer/www/ericp138.sg-host.com/public_html/redirect.php on line 6
+[12-Apr-2023 23:13:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function redirects() in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:131
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 131
