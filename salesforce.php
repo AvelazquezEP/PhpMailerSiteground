@@ -49,13 +49,12 @@ $OCCode = "a1b5f000000eT4PAAU";
 $SDCode = "a1b5f000000eT8bAAE";
 $SMCode = "a1b5f000000eT8gAAE";
 $CHCode = "a1b5f000000enBnAAI";
-// $NCode = "a1b5f000000eT4OAAU"; TODAVIA NO HAY CODIGO
-// $SBCode = "a1b5f000000eT4OAAU"; TODAVIA NO HAY CODIGO
+// $NCode = ""; TODAVIA NO HAY CODIGO
+// $SBCode = ""; TODAVIA NO HAY CODIGO
 
-switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
+switch ($location) { //IN-PERSON (Falta san berdandino)
     case "Los Angeles":
         $code = $LACode;
-        // return $code;
         break;
     case "Orange County":
         $code = strval($OCCode);
@@ -70,6 +69,7 @@ switch ($location) { //IN-PERSON (Falta chicago, san berdandino, National)
         $code = strval($CHCode);
         break;
     case "National":
+        // $code = $LACode;
         // $code = strval($NCode);
         break;
     case "San Bernardino":
@@ -85,16 +85,21 @@ $locationT = "";
 $phone = "VID_CONFERENCE";
 $person = "OUR_LOCATION";
 
-if ($location == "Chicago") { //Phone
-    $locationT = strval($person);
-    $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else if ($meetingType == "Phone") { //Phone
+if ($location != "National") { 
     $locationT = strval($phone);
-    $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else { //Person
-    $locationT = strval($person);
     $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+} else {
+    $locationT = strval($person);
+    $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 }
+
+// if ($location == "National") { // NATIONAL VIRTUAL
+//     $locationT = strval($phone);
+//     $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+// } else { // IN PERSON
+//     $locationT = strval($phone);
+//     $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+// }
 
 try {
 
@@ -140,7 +145,7 @@ try {
     } catch(Exception $e) {
         header("Location: https://ericp138.sg-host.com/sorry.html");
         exit;
-    }    
+    }
 
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

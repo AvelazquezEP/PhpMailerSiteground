@@ -64,3 +64,9 @@ Stack trace:
 [13-Apr-2023 15:50:18 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 166
 [13-Apr-2023 15:52:41 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 167
 [13-Apr-2023 15:54:19 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 166
+[14-Apr-2023 17:46:43 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php on line 87
+[14-Apr-2023 18:55:35 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function redirectsVirtual(), 8 passed in /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php on line 93 and exactly 9 expected in /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php:162
+Stack trace:
+#0 /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php(93): redirectsVirtual('VID_CONFERENCE', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#1 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php on line 162
