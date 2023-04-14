@@ -85,21 +85,13 @@ $locationT = "";
 $phone = "VID_CONFERENCE";
 $person = "OUR_LOCATION";
 
-if ($location != "National") { 
+if ($meetingType == "Phone") { //Phone
     $locationT = strval($phone);
-    $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else {
-    $locationT = strval($person);
     $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+} else { //Person
+    $locationT = strval($person);
+    $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 }
-
-// if ($location == "National") { // NATIONAL VIRTUAL
-//     $locationT = strval($phone);
-//     $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-// } else { // IN PERSON
-//     $locationT = strval($phone);
-//     $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-// }
 
 try {
 
@@ -126,7 +118,7 @@ try {
     //Recipients
     $mail->setFrom('support56@abogadoericprice.com');
 
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
