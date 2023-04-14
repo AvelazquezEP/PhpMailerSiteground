@@ -44,23 +44,23 @@
                     class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2 max-w-screen-xl sm:py-5">
                     <div class="pl-4 flex items-center">
                         <a href="index.html" class="flex items-center">
-                            <img src="/images/EricpriceLogo-white.svg" class="h-9 mr-2 sm:h-9" alt="Eric Price Logo" />
+                            <img src="images/EricpriceLogo-white.svg" class="h-9 mr-2 sm:h-9" alt="Eric Price Logo" />
                         </a>
                     </div>
                     <div class="block lg:hidden pr-4">
-                        <button id="nav-toggle"
-                        class="flex items-center p-1 text-white hover:text-orange-200 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                        <i class="fa-solid fa-bars text-2xl">
-                            <title>Menu</title>
-                        </i>
-                    </button>
+                        <button id="nav-toggle" name="toggle"
+                            class="flex items-center p-1 text-white hover:text-orange-200 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            <i class="fa-solid fa-bars text-2xl">
+                                <title>Menu</title>
+                            </i>
+                        </button>
                     </div>
-                    <div class="w-full flex-grow lg:flex bg-gray-900 lg:items-center lg:w-auto hidden lg:bg-transparent mt-2 lg:mt-0 p-4 lg:p-0 z-20"
+                    <div class="w-full flex-grow lg:flex bg-gray-900 lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent p-4 lg:p-0 z-20"
                         id="nav-content">
                         <ul class="list-reset lg:flex justify-end flex-1 items-center text-white">
                             <li class="mr-3">
                                 <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
-                                    href="index.html">Home</a>
+                                    href="english.html">Home</a>
                             </li>
                             <li class="mr-1">
                                 <a class="inline-block no-underline hover:text-amber-500 hover:text-underline py-2 px-4"
@@ -111,17 +111,17 @@
                         Making their dreams come true, helping thousands of people with their migratory procedures.
                     </h2>
                     <div class="flex flex-row gap-4 items-center mt-4 lg:flex-col lg:items-start">
-                        <button
-                        class="w-11/12 lg:w-2/6 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-2 px-2 rounded">
-                        <a href="tel:(855)662-2772" class="text-[1.1rem]"><i class="fa-solid fa-phone"></i>
-                            (855) 662-2772</a>
-                    </button>
-                        <button
-                        class="w-11/12 lg:w-2/6 border border-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-2 rounded">
-                        <a href="#Contacto" class="text-[1.1rem]]">
-                            Contact us
-                        </a>
-                    </button>
+                        <button name="phoneNumber"
+                            class="w-11/12 lg:w-2/6 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-2 px-2 rounded">
+                            <a href="tel:(855)662-2772" class="text-[1.1rem]"><i class="fa-solid fa-phone"></i>
+                                (855) 662-2772</a>
+                        </button>
+                        <button name="contactButton"
+                            class="w-11/12 lg:w-2/6 border border-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-2 rounded">
+                            <a href="#Contacto" class="text-[1.1rem]]">
+                                Contact us
+                            </a>
+                        </button>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="fade-up">
@@ -129,12 +129,13 @@
                 </div>
             </div>
         </div>
+
         <div class=" w-screen text-center bg-gray-100">
             <div
                 class="flex flex-col justify-around items-center text-gray-500 p-4 gap-10 md:flex-row mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-                <div class="md:w-1/3 lg:w-1/5">
-                    <h2 class="text-2xl font-semibold" data-aos="fade-up">
-                        Our team is dedicated to successfully finish the cases of our customers.
+                <div class="md:w-1/3 lg:w-1/5" data-aos="fade-up">
+                    <h2 class="text-2xl font-semibold">
+                        Our team is dedicated to successfully finish the cases of our customers
                     </h2>
                 </div>
                 <div class="" data-aos="fade-up">
@@ -171,29 +172,30 @@
     </header>
 
     <!-- SERVICIOS -->
-    <div class="mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Servicios" data-aos="fade-right">
+    <div class="mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Servicios">
         <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900">Main Services</h2>
         <div class="flex flex-col gap-4 border-t border-gray pt-10 lg:flex-row">
             <!-- <div class="lg:w-1/2 mx-auto" data-aos="fade-up">
                 <div>
-                    <img src="images/langing-img-cp-1015x1024.webp" alt="Services Image" class="w-[23rem] mx-auto">
+                    <img src="images/langing-img-cp-1015x1024.webp" alt="Services Img" class="w-[23rem] mx-auto">
                 </div>
             </div> -->
             <div class="lg:w-1/2 mx-auto">
                 <span class="text-gray-600 text-base font-semibold nd:text-xl">What we offer you</span>
                 <h3 class="text-gray-500 text-base md:text-xl">
-                    Our law firm Eric Price specializes in immigration cases, these some of the
-                    services we have to offer you.Contact us today.
+                    Our law firm Eric Price specializes in immigration cases, theses some of the services we have to
+                    offer you. Contact us today.
                 </h3>
                 <div class="text-center grid grid-cols-2 gap-6 pt-8 md:grid-cols-3">
-                    <a href="/services/residence.html" class="bg-white pt-4 rounded-sm shadow-sm" data-aos="fade-right">
+                    <a href="/servicios/residencia.html" class="bg-white pt-4 rounded-sm shadow-sm"
+                        data-aos="fade-right">
                         <div class="flex flex-col items-center">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-american-flag-53.png"
                                 width="60px" height="60px" alt="icon Service">
                             <h3 class="text-lg font-medium text-gray-900">Residence</h3>
                         </div>
                     </a>
-                    <a href="/services/citizenship.html" class="bg-white pt-4 rounded-sm shadow-sm"
+                    <a href="/servicios/ciudadania.html" class="bg-white pt-4 rounded-sm shadow-sm"
                         data-aos="fade-right">
                         <div class="flex flex-col items-center bg-white pt-4 rounded-sm shadow-sm">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-capitolio-de-estados-unidos-96.png"
@@ -201,14 +203,14 @@
                             <h3 class="text-lg font-medium text-gray-900">American citizenship</h3>
                         </div>
                     </a>
-                    <a href="/services/uvisa.html" class="bg-white pt-4 rounded-sm shadow-sm" data-aos="fade-right">
+                    <a href="/servicios/uvisa.html" class="bg-white pt-4 rounded-sm shadow-sm" data-aos="fade-right">
                         <div class="flex flex-col items-center bg-white pt-4 rounded-sm shadow-sm">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-id-card-64.png"
                                 width="60px" height="60px" alt="icon Service">
                             <h3 class="text-lg font-medium text-gray-900">U Visa</h3>
                         </div>
                     </a>
-                    <a href="/services/processingConsular.html" class="bg-white pt-4 rounded-sm shadow-sm"
+                    <a href="/servicios/tramiteConsular.html" class="bg-white pt-4 rounded-sm shadow-sm"
                         data-aos="fade-right">
                         <div class="flex flex-col items-center">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-interview-96.png"
@@ -216,7 +218,7 @@
                             <h3 class="text-lg font-medium text-gray-900">Processing consular</h3>
                         </div>
                     </a>
-                    <a href="/services/familyRequest.html" class="bg-white pt-4 rounded-sm shadow-sm"
+                    <a href="/servicios/peticionFamiliar.html" class="bg-white pt-4 rounded-sm shadow-sm"
                         data-aos="fade-right">
                         <div class="flex flex-col items-center">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-interview-96.png"
@@ -224,7 +226,7 @@
                             <h3 class="text-lg font-medium text-gray-900">Family Request</h3>
                         </div>
                     </a>
-                    <a href="/services/removalDefense.html" class="bg-white pt-4 rounded-sm shadow-sm"
+                    <a href="/servicios/defensaExpulsion.html" class="bg-white pt-4 rounded-sm shadow-sm"
                         data-aos="fade-right">
                         <div class="flex flex-col items-center">
                             <img src="https://ericp136.sg-host.com/wp-content/uploads/2023/03/icons8-seguridad-80.png"
@@ -236,16 +238,16 @@
             </div>
         </div>
         <div class="flex flex-col items-center">
-            <button class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-8 mt-4 rounded">
-                <a href="/services/services.html" class="text-2xl">See more services &#8594;</a>
+            <button name="phoneNumber"
+                class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-8 mt-4 rounded">
+                <a href="servicios/servicios.html" class="text-2xl">more services &#8594;</a>
             </button>
         </div>
     </div>
 
     <!-- NOSOTROS -->
-    <div class="flex flex-col gap-4 mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Nosotros"
-        data-aos="fade-right">
-        <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900">What makes us unique</h2>
+    <div class="flex flex-col gap-4 mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Nosotros">
+        <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900">what makes us unique</h2>
         <div class="flex flex-col items-center lg:flex-row border-t border-gray">
             <div class="lg:w-1/2" data-aos="fade-up">
                 <img src="images/testimonialImage.png" class="mx-auto w-[40rem]" alt="Eric price image">
@@ -258,8 +260,8 @@
                     </div>
                     <h3 class="text-2xl font-medium">Consults for free</h3>
                     <p>
-                        When you contact us by phone you can request your first free consultation with one of our
-                        Lawyers
+                        When you contact us by phone you can request you first free consultation with one of our
+                        Lawyers.
                     </p>
                 </div>
                 <div class="bg-white flex flex-col items-center content-center shadow-md py-4 px-4 rounded"
@@ -267,10 +269,9 @@
                     <div>
                         <i class="fa-sharp fa-solid fa-check text-5xl text-green-500"></i>
                     </div>
-                    <h3 class="text-2xl font-medium">different locations</h3>
+                    <h3 class="text-2xl font-medium">Different locations</h3>
                     <p>
-                        We have offices in different states of the country, ask about the closest to your
-                        location.
+                        We have offices in different states of the countr, ask about the closest to your location.
                     </p>
                 </div>
                 <div class="bg-white flex flex-col items-center content-center shadow-md py-4 px-4 rounded"
@@ -290,7 +291,7 @@
                     </div>
                     <h3 class="text-2xl font-medium">Experience</h3>
                     <p>
-                        We have more than 15 years of experience taking migratory cases, be sure of We can help him
+                        we have more than 15 years of experience taking migratory cases, be sure of We can help him
                     </p>
                 </div>
             </div>
@@ -309,17 +310,17 @@
             class="flex flex-col items-center text-center text-white py-9 lg:flex-row px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div class="lg:w-1/2 flex flex-col gap-5" data-aos="fade-up">
                 <h2 class="text-3xl font-bold leading-10">
-                    Eric Price is willing to help you fulfill your dreams.
+                    Eric Price is Willing to help you fulfill your dreams.
                 </h2>
                 <p class="text-xl text-gray-50 font-normal leading-8">
-                    In lawyer Eric Price we can help you comply Your dreams of
-                    immigration.Ask for your free consultation With us today.
+                    In lawyer Eric Price we can help you comply Your dreams of immigrations. Ask for you free
+                    consultations with us today.
                 </p>
-                <button
+                <button name="phoneNumber"
                     class="mx-auto w-11/12 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 lg:py-3 px-8 mt-4 rounded lg:w-3/4 2xl:w-3/5">
                     <a href="tel:(855)662-2772" class="text-2xl"><i class="fa-solid fa-phone"></i> (855) 662-2772</a>
                 </button>
-                <button
+                <button name="contactButton"
                     class="mx-auto w-11/12 bg-white hover:bg-orange-400 hover:text-white text-gray-900 font-bold py-2 lg:py-3 px-8 mt-4 rounded lg:w-3/4 2xl:w-3/5">
                     <a href="#Contacto" class="text-2xl">Consults for free &#8594;</a>
                 </button>
@@ -337,7 +338,7 @@
             class="grid grid-cols-1 gap-7 p-4 pt-6 place-items-center md:grid-cols-2 xl:grid-cols-3 border-t border-gray">
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/Attorney-Eric-Price-1365x2048.webp"
+                    <img src="images/Attorney-Eric-Price-1365x2048.webp"
                         class="mx-auto object-cover w-36 h-36 rounded-full" alt="Eric Price image">
                 </div>
                 <div class="flex flex-col gap-3">
@@ -363,7 +364,8 @@
             </div>
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/MitziCaardenas.webp" class="mx-auto object-cover w-36 h-36 rounded-full" alt="Mitzi Caardenas ">
+                    <img src="images/MitziCaardenas.webp" class="mx-auto object-cover w-36 h-36 rounded-full"
+                        alt="Mitzi Caardenas Image">
                 </div>
                 <div class="flex flex-col gap-3">
                     <div>
@@ -388,7 +390,8 @@
             </div>
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/SumeetLall.webp" class="mx-auto object-cover w-36 h-36 rounded-full" alt="Summet Lall image">
+                    <img src="images/SumeetLall.webp" class="mx-auto object-cover w-36 h-36 rounded-full"
+                        alt="Summet Lall image">
                 </div>
                 <div class="flex flex-col gap-3">
                     <div>
@@ -413,7 +416,8 @@
             </div>
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/JonathanStrait.webp" class="mx-auto object-cover w-36 h-36 rounded-full" alt="Jonathan Strait image">
+                    <img src="images/JonathanStrait.webp" class="mx-auto object-cover w-36 h-36 rounded-full"
+                        alt="Jonathan Strait image">
                 </div>
                 <div class="flex flex-col gap-3">
                     <div>
@@ -424,7 +428,8 @@
             </div>
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/KeithAyers.webp" class="mx-auto object-cover w-36 h-36 rounded-full" alt="Keith Ayers image">
+                    <img src="images/KeithAyers.webp" class="mx-auto object-cover w-36 h-36 rounded-full"
+                        alt="Keith Ayers image">
                 </div>
                 <div class="flex flex-col gap-3">
                     <div>
@@ -435,7 +440,8 @@
             </div>
             <div class="w-11/12 flex flex-col items-center rounded-xl shadow-md p-4" data-aos="fade-up">
                 <div>
-                    <img src="/images/Valentin.png" class="mx-auto object-cover w-36 h-36 rounded-full" alt="Valentin image">
+                    <img src="images/Valentin.png" class="mx-auto object-cover w-36 h-36 rounded-full"
+                        alt="Valentin image">
                 </div>
                 <div class="flex flex-col gap-3">
                     <div>
@@ -455,8 +461,8 @@
             </h2>
             <div class="pt-8 text-left border-t border-gray-200">
                 <div class="grid grid-cols-1 md:gap-8 md:grid-cols-2">
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -465,33 +471,30 @@
                             </svg>
                             They can help me with my migratory process&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Of course, we can help you in any immigration process you need, you just occupy
-                            get in touch with us and we will guide you, call the number
-                            <span>
-                                <a href="tel:(855)662-2772" class="font-medium underline text-primary-600">
-                                    (855) 662-2772
-                                </a>
-                            </span>
+                        <p class="text-gray-500">
+                            OF course, we can help you in any immigration process you need, you just occupy get in touch
+                            with us and we will guide you, call the number
+                            <span><a href="tel:(855)662-2772" class="font-medium underline text-primary-600">
+                                    (855)662-2772</a></span>
                         </p>
                     </div>
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                                     clip-rule="evenodd"></path>
                             </svg>
-                            a legal relative member can request me a Greencard&#63;
+                            a legal relative member can request me a Greencards&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Yes, a relative can request your residence but it is necessary to review your current status
-                            and The most thorough case, contact us and we will start your case.
+                        <p class="text-gray-500">
+                            Yes, a relative can request you residence but it is necessary to review your current status
+                            and the most through case, contact us and we will start your case.
                         </p>
                     </div>
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -500,29 +503,28 @@
                             </svg>
                             I was victim of a crime, Can I apply to some legal status&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Yes, you can apply depending on the crime that occurred, for this it is necessary to call us
-                            to can Check to which of the different processes you can apply to make your case a success.
+                        <p class="text-gray-500">
+                            Yes, you can apply depending on the crime that ocurred, for this it is necessary to cal us
+                            to can check to which of the different processes you can apply to make your case a success.
                         </p>
                     </div>
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                                     clip-rule="evenodd"></path>
                             </svg>
-                            I am a resident and I would like to apply for citizens, Can I take the
-                            Process with you&#63;
+                            I am a resident and I would like to apply to citizens, Can I take the Process with you&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Of course, you can apply for citizens, for this it is only necessary to request a
-                            Consult with one of our lawyers.The first consultation is always free.
+                        <p class="text-gray-500">
+                            Of course, you can apply for citizens for this it is only necessary to request a consult
+                            with one of our lawyers. The first consultation is always free.
                         </p>
                     </div>
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -531,14 +533,13 @@
                             </svg>
                             How do I know if I can qualify for an asylum&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            There are several reasons why you can request asylum or protection for that is
-                            necessary to evaluate your current situation, contact us to be able to review
-                            All necessary information.
+                        <p class="text-gray-500">
+                            There are several reasons why you can request asylum or protection for that is necessary to
+                            evaluate you current situation, contact us to be able to review all necessary information.
                         </p>
                     </div>
-                    <div class="mb-10" data-aos="fade-up">
-                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <div class="mb-10" data-aos="zoom-in">
+                        <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
                             <svg class="flex-shrink-0 mr-2 w-5 h-5 text-[#001E3E] fill=" currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -547,11 +548,11 @@
                             </svg>
                             I lost my residence card, Can you help me get my residence card&#63;
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Of course we can help you get a replacement of your resident card only Put
-                            In contact with us and we will help you obtain it. <span><a href="tel:(855)662-2772"
-                                    class="font-medium underline text-primary-600">(855)
-                                    662-2772</a></span>
+                        <p class="text-gray-500">
+                            Of course we can help you get a replacement of your resident card only put in contact with
+                            us and we will help you obtain it. <span><a href="tel:(855)662-2772"
+                                    class="font-medium underline text-primary-600">
+                                    (855)662-2772</a></span>
                         </p>
                     </div>
                 </div>
@@ -560,28 +561,27 @@
     </div>
 
     <!-- TESTIMONIALS -->
-    <div class="text-center mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Testimonios" data-aos="fade-right">
+    <div class="text-center mt-16 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Testimonios">
         <h2 class="mb-6 text-4xl tracking-tight font-extrabold text-gray-900">
             Don't believe us, look what our clients say
         </h2>
-        <p class="mb-6 font-normal text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-            We help many people to migrate to the United States, we take each of their cases and create a
-            Personalized plan to be able to take it to a case of successes
+        <p class="mb-6 font-normal text-gray-500 lg:mb-16 sm:text-xl">
+            We help many people to migrate to the United States, we take each of their cases and create a personalized
+            plan to be able to take it to a case of successes
         </p>
-        <section class="bg-white dark:bg-gray-900">
+        <section class="bg-white">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
                 <div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
                     <figure
                         class="flex flex-col justify-center items-center p-8 text-center bg-[#001E3E] border-b border-gray-200 md:p-12 lg:border-r"
                         data-aos="fade-right">
-                        <blockquote class="mx-auto mb-8 max-w-2xl text-white">
+                        <blockquote class="mx-auto text-center mb-8 max-w-2xl text-white">
                             <h3 class="text-lg font-semibold text-white">
                                 Very good lawyer
                             </h3>
                             <p class="my-4">
-                                "because it has helped many people who may think
-                                Your immigration case has no remedy.I strongly recommend your services!God
-                                bless him and his professional team."
+                                "becauseit has helped many people who may think your immigration case has no remedy. I
+                                strongly recommend your services !God bess him and his professional team."
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
@@ -590,7 +590,7 @@
                                 alt="profile picture"> -->
                             <div class="space-y-0.5 font-medium text-center">
                                 <div class="text-white">Lorraine Perez</div>
-                                <div class="text-sm font-light text-gray-50 dark:text-gray-400">
+                                <div class="text-sm font-light text-gray-50">
                                     Los Angeles
                                 </div>
                             </div>
@@ -599,14 +599,14 @@
                     <figure
                         class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12"
                         data-aos="fade-right">
-                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
+                            <h3 class="text-lg font-semibold text-gray-900">
                                 Service, kindness and performance in their work
                             </h3>
                             <p class="my-4">
-                                "Thanks to the lawyer Eric Price and the legal assistant Miss Irene Castrillon for such
-                                Excellent service, kindness and performance in your work!Everything takes time and with
-                                the help from God and everything will be excellent!Blessings!!I recommend them !!"
+                                "thanks to the lawyer Eric Price and the legal assistant Miss Irene Castrillon for such
+                                Excellent service, kindness and performance in your work! Everything takes time and with
+                                the help from God and everything will be excellent !blessings !!I recomment them !!"
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
@@ -615,24 +615,23 @@
                                 alt="profile picture"> -->
                             <div class="space-y-0.5 font-medium text-center">
                                 <div>Oscar Guadron</div>
-                                <div class="text-sm font-light text-gray-500 dark:text-gray-400">
+                                <div class="text-sm font-light text-gray-500">
                                     Orange County
                                 </div>
                             </div>
                         </figcaption>
                     </figure>
-
                     <figure
                         class="flex flex-col justify-center items-center p-8 text-center bg-[#001E3E] lg:bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r"
                         data-aos="fade-right">
-                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-50 lg:text-gray-500 dark:text-gray-400">
-                            <h3 class="text-lg font-semibold text-white lg:text-gray-900 dark:text-white">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-50 lg:text-gray-500">
+                            <h3 class="text-lg font-semibold text-white lg:text-gray-900">
                                 satisfied with the great disposition
                             </h3>
                             <p class="my-4">
-                                "I am currently starting a legal process with lawyer Eric Price in his offices
-                                from Santa Ana and so far I am satisfied with the great disposition they have for
-                                Help you with any questions or question, so I recommend them."
+                                "I am currently starting a legal process with lawyer Eric Price in his offices from
+                                Santa ana and so far I am satisfied with the great disposition they have for Help you
+                                with any questions or question, so I recommend them"
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
@@ -647,19 +646,18 @@
                             </div>
                         </figcaption>
                     </figure>
-
                     <figure
                         class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 lg:bg-[#001E3E] border-gray-200 md:p-12"
                         data-aos="fade-right">
                         <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 lg:text-gray-50">
-                            <h3 class="text-lg font-semibold text-gray-900 lg:text-white dark:text-white">
+                            <h3 class="text-lg font-semibold text-gray-900 lg:text-white">
                                 Very seriously responsible
                             </h3>
                             <p class="my-4">
-                                "The truth is that they are very seriously responsible, and I have behaved of it
-                                way with them, my ab. Denisse and Supervisor Edgar of the Santa Ana office are
-                                Impressive They are helping me sincerely and I give them my most sincere thanks.
-                                I hope we can move forward with God's blessing over all things."
+                                "The truth is that they are very seriously responsible, and I have behaved of it way
+                                them, my ab. Denisse and Supervisor Edgar of the Santa Ana office are Impressive They
+                                are helping me sincerely and I give them my most sincere thanks. I hope we can move
+                                forward with God's blessing over all things
                             </p>
                         </blockquote>
                         <figcaption class="flex justify-center items-center space-x-3">
@@ -668,7 +666,7 @@
                                 alt="profile picture"> -->
                             <div class="space-y-0.5 font-medium text-center">
                                 <div class="lg:text-white">Roberto Villavicencio</div>
-                                <div class="text-sm font-light text-gray-500 lg:text-gray-50 dark:text-gray-400">
+                                <div class="text-sm font-light text-gray-500 lg:text-gray-50">
                                     Los Angeles
                                 </div>
                             </div>
@@ -676,7 +674,7 @@
                     </figure>
                 </div>
                 <div class="text-center">
-                    <a href="testimonials.html"
+                    <a href="testimonios.html"
                         class="py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                         Read more...</a>
                 </div>
@@ -684,48 +682,57 @@
     </div>
 
     <!-- BLOG -->
-    <div id="Blog" data-aos="fade-right">
+    <div id="Blog">
         <div>
-            <section class="bg-white dark:bg-gray-900">
+            <section class="bg-white">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                        <h2
-                            class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                        <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">
                             Our Blog
                         </h2>
-                        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                        <p class="font-normal text-gray-800 sm:text-xl">
                             Enter our blog and find more recent information about migratory cases
                         </p>
+                        <button>
+                            <a href="https://ericp138.sg-host.com/blog.html"
+                                class="inline-flex items-center underline font-medium text-gray-500">
+                                more post
+                                <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </button>
                     </div>
                     <div class="grid gap-8 lg:grid-cols-2">
-                        <article
-                            class="p-6 bg-white rounded border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-                            data-aos="fade-right">
+                        <article class="p-6 bg-white rounded border border-gray-200 shadow-md" data-aos="fade-right">
                             <div class="flex justify-between items-center mb-5 text-gray-500">
                                 <span class="text-sm">September 23, 2022</span>
                             </div>
                             <div>
-                                <img src="images/blog1.png" alt="" class="rounded mb-2">
+                                <img src="images/blog1.png" alt="Blog image" class="rounded mb-2">
                             </div>
-                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="">
                                     All about the sanctions for marriage fraud related to the immigration.
                                 </a>
                             </h2>
-                            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+                            <p class="mb-5 font-light text-gray-500">
                                 Immigration marriage fraud can take several forms. When a marriage fraud is discovered,
-                                not only might the immigrant ...
+                                not only might t he immigrant ...
                             </p>
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center space-x-4">
                                     <img class="w-7 h-7 rounded-full object-cover"
                                         src="images/Attorney-Eric-Price-1365x2048.webp" alt="Jese Leos avatar" />
-                                    <span class="font-medium dark:text-white">
+                                    <span class="font-medium">
                                         Eric Price
                                     </span>
                                 </div>
                                 <a href=""
-                                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                                    class="inline-flex items-center font-medium text-primary-600 hover:underline">
                                     Read more
                                     <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -736,34 +743,32 @@
                                 </a>
                             </div>
                         </article>
-                        <article
-                            class="p-6 bg-white rounded border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-                            data-aos="fade-right">
+                        <article class="p-6 bg-white rounded border border-gray-200 shadow-md" data-aos="fade-right">
                             <div class="flex justify-between items-center mb-5 text-gray-500">
                                 <span class="text-sm">September 09, 2022</span>
                             </div>
                             <div>
                                 <img src="images/blog2.png" alt="Blog image" class="rounded mb-2">
                             </div>
-                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="">
-                                    What happens with an immigration request if the sponsor dies?
+                                    what happens with an immigration request if the sponsor dies?
                                 </a>
                             </h2>
-                            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+                            <p class="mb-5 font-light text-gray-500">
                                 Well, the process would be more difficult but not impossible. Unlike previous years,
-                                When the petitioner always died...
+                                when the petitioner always died...
                             </p>
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center space-x-4">
                                     <img class="w-7 h-7 rounded-full object-cover"
                                         src="images/Attorney-Eric-Price-1365x2048.webp" alt="Jese Leos avatar" />
-                                    <span class="font-medium dark:text-white">
+                                    <span class="font-medium">
                                         Eric Price
                                     </span>
                                 </div>
                                 <a href=""
-                                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                                    class="inline-flex items-center font-medium text-primary-600 hover:underline">
                                     Read more
                                     <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -774,34 +779,32 @@
                                 </a>
                             </div>
                         </article>
-                        <article
-                            class="p-6 bg-white rounded border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-                            data-aos="fade-right">
+                        <article class="p-6 bg-white rounded border border-gray-200 shadow-md" data-aos="fade-right">
                             <div class="flex justify-between items-center mb-5 text-gray-500">
                                 <span class="text-sm">August 26, 2022</span>
                             </div>
                             <div>
-                                <img src="images/blog3.png" alt="blog 3" class="rounded mb-2">
+                                <img src="images/blog3.png" alt="Blog image" class="rounded mb-2">
                             </div>
-                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="">
                                     What is Removal Defense?
                                 </a>
                             </h2>
-                            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
-                                Deportation defense implies representing and defending immigrants who face
-                                the Deportation of the State...
+                            <p class="mb-5 font-light text-gray-500">
+                                Deportation defense implues representing and defending immigrants who face the
+                                Deportation...
                             </p>
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center space-x-4">
                                     <img class="w-7 h-7 rounded-full object-cover"
                                         src="images/Attorney-Eric-Price-1365x2048.webp" alt="Jese Leos avatar" />
-                                    <span class="font-medium dark:text-white">
+                                    <span class="font-medium">
                                         Eric Price
                                     </span>
                                 </div>
                                 <a href=""
-                                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                                    class="inline-flex items-center font-medium text-primary-600 hover:underline">
                                     Read more
                                     <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -819,26 +822,33 @@
     </div>
 
     <!-- CONTACT FORM -->
-    <div class=" mt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Contacto" data-aos="fade-up">
+    <div class="mt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="Contacto" data-aos="zoom-in">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-90">
             Contact
         </h2>
         <p class="mb-8 lg:mb-16 font-normal text-center text-gray-500 sm:text-xl">
-            In lawyer Eric Price we can help you fulfill your immigration dreams.Ask for your free consultation
-            communicating with us today.
+            In lawyer Eric Price we can help you fulfill immigration dreams. Ask for you free consultation
+            communications with us today
         </p>
         <section class="bg-gray-50">
-            <div class="px-4 mx-auto  max-w-screen-md">
-                <form action="mail.php" method="POST" id="formSalesforce">
-                    <!-- INPUT HIDDEN / DON'T DELETE -->
+            <div class="px-4 mx-auto max-w-screen-md">
+
+                <!-- <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
+                    id="formSalesforce" class="formSalesforce" name="formSalesforce"> -->
+                <form action="salesforce.php" method="POST">
+                    <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
-                    <input type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="English">
+                    <!-- <input type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html"> -->
+                    <!-- <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/mail.php?meetingType=VID_CONFERENCE&first_name=Test&last_name=form&email=test@form.com&mobile=123321&message=test&00N5f00000SB1X0=Los%20Angeles" id="redirectHtml"> -->
+                    <!-- <input type=hidden type=hidden name="retURL" value="https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB"> -->
+                    <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language"
+                        value="English">
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
 
                     <div class="flex flex-col gap-8">
                         <div>
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">
-                                First Name
+                                first Name
                             </label>
                             <input id="first_name" maxlength="40" name="first_name" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
                             focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Eric"
@@ -846,8 +856,7 @@
                         </div>
 
                         <div>
-                            <label for="last_name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">
                                 Last Name
                             </label>
                             <input id="last_name" maxlength="80" name="last_name" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
@@ -856,7 +865,7 @@
                         </div>
 
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
                                 Email
                             </label>
                             <input id="email" maxlength="80" name="email" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
@@ -865,7 +874,7 @@
                         </div>
 
                         <div>
-                            <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                            <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900">
                                 Mobile Phone
                             </label>
                             <input id="mobile" maxlength="40" name="mobile" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
@@ -874,12 +883,12 @@
                         </div>
 
                         <div>
-                            <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                            <label for="" class="block mb-2 text-sm font-medium text-gray-900">
                                 Location
                             </label>
                             <select id="00N5f00000SB1X0" name="00N5f00000SB1X0" title="Location" class="shadow-sm
                         bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500
-                            focus:border-primary-500 block w-full p-2.5" required>
+                            focus:border-primary-500 block w-full p-2.5" required onchange="changeLocation()">
                                 <option value="">--None--</option>
                                 <option value="Chicago">Chicago</option>
                                 <option value="Los Angeles">Los Angeles</option>
@@ -887,7 +896,7 @@
                                 <option value="Orange County">Orange County</option>
                                 <option value="San Diego">San Diego</option>
                                 <option value="San Marcos">San Marcos</option>
-                                <option value="San Bernardino">San Bernardino</option>
+                                <!-- <option value="San Bernardino">San Bernardino</option> -->
                             </select>
                         </div>
 
@@ -902,45 +911,49 @@
 
                         <div>
                             <label for="" class="block mb-2 text-sm font-medium text-gray-900">
-                                Sign up to receive SMS messages
+                                sign up to receive SMS messages
                             </label>
                             <div class="radioGroup">
+                                <!-- <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Agree" value="Yes" -->
                                 <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Agree" value="Yes"
                                     checked="true" />
                                 <label for="Agree">I agree</label>
                             </div>
                             <div class="radioGroup">
+                                <!-- <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Idisagree" -->
                                 <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Idisagree"
                                     value="No" />
                                 <label for="Idisagree">I disagree</label>
                             </div>
                         </div>
                         <div>
-                            <textarea name="policy" cols="30" rows="3"
+                            <textarea disabled name="policy" cols="30" rows="3"
                                 class="block p-2.5 border-none resize-none
                                 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300
                                 focus:ring-primary-500 focus:border-primary-500">By entering my mobile number and checking this box I agree to receive case status updates, meeting updates, and legal news notifications from Abogado Eric Price Los Angeles Immigration Attorneys. Message frequency varies. Text HELP to 94289 for help. Text STOP to 94289 to end. Msg & data rates may apply. By opting in, I authorize Abogado Eric Price Los Angeles Immigration Attorneys to deliver SMS messages using an automatic telephone dialing system and I understand that I am not required to opt in as a condition of purchasing any property, goods, or services. By leaving this box unchecked you will not be opted in for SMS messages at this time. Click to read</textarea>
                         </div>
                         <div>
-                            <label for="" class="block mb-2 text-sm font-medium text-gray-900">
-                                Record Type
-                            </label>
-                            <div class="radioGroup">
-                                <input type="radio" id="meetingType" name="meetingType" name="Phone" value="Phone" />
-                                <label for="Agree">By Phone</label>
-                            </div>
-                            <div class="radioGroup">
-                                <input type="radio" id="meetingType" name="meetingType" name="Person"
-                                    value="Person" checked="true"/>
-                                <label for="Idisagree">In-Person</label>
+                            <!-- <label for="" class="block mb-2 text-sm font-medium text-gray-900">
+                                Tipo de cita
+                            </label> -->
+                            <!-- <p hidden id="recordMessage">Message Test</p> -->
+                            <div hidden id="recordTypeGroup">
+                                <div class="radioGroup">
+                                    <input type="radio" id="meetingTypePhone" name="meetingType" name="Phone"
+                                        value="Phone" />
+                                    <label for="Agree" id="phoneTxt">By phone</label>
+                                </div>
+                                <div class="radioGroup">
+                                    <input type="radio" id="meetingTypePerson" name="meetingType" name="Person"
+                                        value="Person" checked="true" />
+                                    <label for="Idisagree" id="personTxt">In-Person</label>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-8">
-                        <button
-                        name="sendButton"
-                        type="submit" id="ButtonSend"
-                            class="w-11/12 py-2.5 px-5 mt-8 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <button name="sendButton" type="submit" id="ButtonSend"
+                            class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Send
                         </button>
                     </div>
@@ -954,8 +967,8 @@
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">
                 <div class="mb-6">
-                    <a href="/english.html" class="flex items-center">
-                        <img src="/images/EricpriceLogo-white.svg" class="w-[15rem] mx-auto pb-4"
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/EricpriceLogo-white.svg" class="w-[15rem] mx-auto pb-4"
                             alt="Eric Price logo" />
                     </a>
                     <div class="flex flex-col items-center gap-1 justify-center mt-2 text-white">
@@ -974,61 +987,61 @@
                     </div>
                 </div>
                 <!-- SOCIAL MEDIA FOOTER -->
-                <div>
-                    <div class="flex flex-row justify-around w-4/5 mx-auto">
-                        <div class="font-bold rounded-full bg-white flex items-center justify-center"
-                            style="height: 40px; width: 40px; font-size: 18px;">
-                            <a href="https://www.facebook.com/abogadoericprice" target="_blank">
-                                <i class="fa-brands fa-facebook text-2xl text-[#3b5999]"></i></a>
-                        </div>
-                        <div class="font-bold rounded-full bg-white flex items-center justify-center"
-                            style="height: 40px; width: 40px; font-size: 18px;">
-                            <a href="https://www.tiktok.com/@attorneyericprice" target="_blank">
-                                <i class="fa-brands fa-tiktok text-2xl text-gray-900"></i></a>
-                        </div>
-                        <div class="font-bold rounded-full bg-white flex items-center justify-center"
-                            style="height: 40px; width: 40px; font-size: 18px;">
-                            <a href="https://www.instagram.com/abogadoericprice/" target="_blank">
-                                <i class="fa-brands fa-instagram text-2xl text-[#e4405f]"></i></a>
-                        </div>
-                        <div class="font-bold rounded-full bg-white flex items-center justify-center"
-                            style="height: 40px; width: 40px; font-size: 18px;">
-                            <a href="https://www.youtube.com/@EricPriceEsq" target="_blank">
-                                <i class="fa-brands fa-youtube text-2xl text-[#FF0000]"></i></a>
-                        </div>
+
+                <div class="flex flex-row justify-around w-4/5 mx-auto">
+                    <div class="font-bold rounded-full bg-white flex items-center justify-center"
+                        style="height: 40px; width: 40px; font-size: 18px;">
+                        <a href="https://www.facebook.com/abogadoericprice" target="_blank">
+                            <i class="fa-brands fa-facebook text-2xl text-[#3b5999]"></i></a>
+                    </div>
+                    <div class="font-bold rounded-full bg-white flex items-center justify-center"
+                        style="height: 40px; width: 40px; font-size: 18px;">
+                        <a href="https://www.tiktok.com/@attorneyericprice" target="_blank">
+                            <i class="fa-brands fa-tiktok text-2xl text-gray-900"></i></a>
+                    </div>
+                    <div class="font-bold rounded-full bg-white flex items-center justify-center"
+                        style="height: 40px; width: 40px; font-size: 18px;">
+                        <a href="https://www.instagram.com/abogadoericprice/" target="_blank">
+                            <i class="fa-brands fa-instagram text-2xl text-[#e4405f]"></i></a>
+                    </div>
+                    <div class="font-bold rounded-full bg-white flex items-center justify-center"
+                        style="height: 40px; width: 40px; font-size: 18px;">
+                        <a href="https://www.youtube.com/@EricPriceEsq" target="_blank">
+                            <i class="fa-brands fa-youtube text-2xl text-[#FF0000]"></i></a>
                     </div>
                 </div>
+
             </div>
             <div class="md:w-4/12">
                 <div>
                     <h2 class="mb-4 text-lg text-center font-semibold text-white uppercase">Route site</h2>
-                    <ul class="text-gray-200 dark:text-gray-400 text-center">
+                    <ul class="text-gray-200 text-center">
                         <li>
-                            <a href="/english.html">Home</a>
+                            <a href="index.html">Inicio</a>
                         </li>
                         <li>
-                            <a href="#Servicios">Services</a>
+                            <a href="#Servicios">Servicios</a>
                         </li>
                         <li>
-                            <a href="#Nosotros">About Us</a>
+                            <a href="#Nosotros">Nosotros</a>
                         </li>
                         <li>
-                            <a href="#Equipo">Team</a>
+                            <a href="#Equipo">Equipo</a>
                         </li>
                         <li>
                             <a href="#FAQ">FAQ</a>
                         </li>
                         <li>
-                            <a href="#Testimonios">Testimonials</a>
+                            <a href="#Testimonios">Testimonios</a>
                         </li>
                         <li>
                             <a href="#Blog">Blog</a>
                         </li>
                         <li>
-                            <a href="#Contacto">Contact</a>
+                            <a href="#Contacto">Contacto</a>
                         </li>
                         <li>
-                            <a href="index.html">Español</a>
+                            <a href="english.html">English</a>
                         </li>
                     </ul>
                 </div>
@@ -1038,7 +1051,7 @@
                 <div class="grid grid-cols-2 gap-4 md:mx-auto">
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/LADirectionsEnglish.html" target="_blank">
+                        <a href="https://cta.ericp138.sg-host.com/html/LADirectionsSpanish.html" target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">Los Angeles</h2>
                                 <p>
@@ -1050,7 +1063,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/OCDirectionsEnglish.html" target="_blank">
+                        <a href="https://cta.ericp138.sg-host.com/html/OCDirectionsSpanish.html" target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">Orange County</h2>
                                 <p>
@@ -1062,7 +1075,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/sanMarcosDirectionsEnglish.html" target="_blank">
+                        <a href="https://cta.ericp138.sg-host.com/html/sanMarcosDirectionsSpanish.html" target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">San Marcos</h2>
                                 <p>
@@ -1074,7 +1087,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/chulaVistaDirectionsEnglish.html"
+                        <a href="https://cta.ericp138.sg-host.com/html/chulaVistaDirectionsSpanish.html"
                             target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">Chula Vista</h2>
@@ -1087,7 +1100,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/chicagoDirectionsEnglish.html" target="_blank">
+                        <a href="https://cta.ericp138.sg-host.com/html/chicagoDirectionsSpanish.html" target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">Chicago</h2>
                                 <p>
@@ -1100,7 +1113,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
-                        <a href="https://cta.ericp138.sg-host.com/html/SBDirectionsEnglish.html" target="_blank">
+                        <a href="https://cta.ericp138.sg-host.com/html/SBDirectionsSpanish.html" target="_blank">
                             <div class="ml-2 text-white">
                                 <h2 class="font-semibold">San Bernardino</h2>
                                 <p>
@@ -1116,15 +1129,15 @@
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div class="text-center sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="index.html" class="hover:underline">Eric
+            <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="/index.html" class="hover:underline">Eric
                     Price™</a>. All Rights Reserved.
             </span>
-            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0">
                 <li>
                     <a href="" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Resignation of responsibility</a>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Reasignation of responsibility</a>
                 </li>
                 <li>
                     <a href="#" class="hover:underline">Legal note</a>
@@ -1151,10 +1164,11 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="form.js"></script> -->
+    <script src="form.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/smoothScroll.js"></script>
     <script src="js/toggle.js"></script>
+    <script src="js/select.js"></script>
 
     <!-- CSS AOS - Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
