@@ -13,7 +13,7 @@ $mail = new PHPMailer(true);
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-// Data to send Get from form.js (AJAX with Json) I change the name with the letter C
+// Data source: Html Form
 $namec = $_POST['firstName'];
 $lastNamec = $_POST['lastName'];
 $emailc = $_POST['email'];
@@ -118,7 +118,7 @@ try {
     //Recipients
     $mail->setFrom('support56@abogadoericprice.com');
 
-    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content

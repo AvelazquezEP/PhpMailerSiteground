@@ -831,23 +831,18 @@
         </p>
         <section class="bg-gray-50">
             <div class="px-4 mx-auto max-w-screen-md">
-
-                <!-- <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
-                    id="formSalesforce" class="formSalesforce" name="formSalesforce"> -->
+                <!-- <form id="salesForceForm"> -->
                 <form action="salesforce.php" method="POST">
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
-                    <!-- <input type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html"> -->
-                    <!-- <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/mail.php?meetingType=VID_CONFERENCE&first_name=Test&last_name=form&email=test@form.com&mobile=123321&message=test&00N5f00000SB1X0=Los%20Angeles" id="redirectHtml"> -->
-                    <!-- <input type=hidden type=hidden name="retURL" value="https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB"> -->
-                    <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language"
-                        value="English">
+                    <!-- <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish"> -->
+                    <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="English">
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
 
                     <div class="flex flex-col gap-8">
                         <div>
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">
-                                first Name
+                                First name
                             </label>
                             <input id="first_name" maxlength="40" name="first_name" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
                             focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Eric"
@@ -855,8 +850,9 @@
                         </div>
 
                         <div>
-                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">
-                                Last Name
+                            <label for="last_name"
+                                class="block mb-2 text-sm font-medium text-gray-900">
+                                Last name
                             </label>
                             <input id="last_name" maxlength="80" name="last_name" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
                             focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Price"
@@ -883,7 +879,7 @@
 
                         <div>
                             <label for="" class="block mb-2 text-sm font-medium text-gray-900">
-                                Location
+                                Lugar
                             </label>
                             <select id="00N5f00000SB1X0" name="00N5f00000SB1X0" title="Location" class="shadow-sm
                         bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500
@@ -901,7 +897,7 @@
 
                         <div class="">
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
-                                Comments:
+                                Comments
                             </label>
                             <textarea id="message" name="message" rows="6"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
@@ -910,16 +906,16 @@
 
                         <div>
                             <label for="" class="block mb-2 text-sm font-medium text-gray-900">
-                                sign up to receive SMS messages
+                                Sign up to receive SMS messages
                             </label>
                             <div class="radioGroup">
-                                <!-- <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Agree" value="Yes" -->
+                                <!-- <input type="radio" id="agreeSms" name="00N5f00000SB1XU" name="Agree" value="Yes" -->
                                 <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Agree" value="Yes"
                                     checked="true" />
                                 <label for="Agree">I agree</label>
                             </div>
                             <div class="radioGroup">
-                                <!-- <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Idisagree" -->
+                                <!-- <input type="radio" id="disagreeSms" name="00N5f00000SB1XU" name="Idisagree" -->
                                 <input type="radio" id="00N5f00000SB1XU" name="00N5f00000SB1XU" name="Idisagree"
                                     value="No" />
                                 <label for="Idisagree">I disagree</label>
@@ -938,23 +934,31 @@
                             <!-- <p hidden id="recordMessage">Message Test</p> -->
                             <div hidden id="recordTypeGroup">
                                 <div class="radioGroup">
-                                    <input type="radio" id="meetingTypePhone" name="meetingType" name="Phone"
-                                        value="Phone" />
-                                    <label for="Agree" id="phoneTxt">By phone</label>
+                                    <input type="radio" id="meetingTypePhone" name="meetingType" name="Phone" value="Phone" />
+                                    <label for="Agree" id="phoneTxt" checked="true">By phone</label>
                                 </div>
                                 <div class="radioGroup">
                                     <input type="radio" id="meetingTypePerson" name="meetingType" name="Person"
-                                        value="Person" checked="true" />
-                                    <label for="Idisagree" id="personTxt">In-Person</label>
+                                    value="Person"/>
+                                    <label for="Idisagree" id="personTxt">In person</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-8">
-                        <button name="sendButton" type="submit" id="ButtonSend"
+                        <button
+                        name="sendButton"
+                        id="ButtonSend"
+                        onclick="sendData()"
                             class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Send
                         </button>
+                        <!-- <button
+                        name="sendButton"
+                        type="submit" id="ButtonSend"
+                            class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                            Enviar
+                        </button> -->
                     </div>
                 </form>
             </div>
@@ -1163,7 +1167,7 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="form.js"></script>
+    <!-- <script src="form.js"></script> -->
     <script src="js/nav.js"></script>
     <script src="js/smoothScroll.js"></script>
     <script src="js/toggle.js"></script>

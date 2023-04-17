@@ -1,24 +1,19 @@
 const sendData = () => {
 
-    const oid = document.getElementById("oid").value;
+    // const oid = document.getElementById("oid").value;
+    // const leadSource = document.getElementById("lead_source").value;
     const language = document.getElementById("00N5f00000SB1Ws").value;
-    const leadSource = document.getElementById("lead_source").value;
     const firstNamePhp = document.getElementById("first_name").value;
     const lastNamePhp = document.getElementById("last_name").value;
     const emailPhp = document.getElementById("email").value;
     const phonePhp = document.getElementById("mobile").value;
     const location = document.getElementById("00N5f00000SB1X0").value;
     const comment = document.getElementById("message").value;
-    // const sms = document.getElementById("00N5f00000SB1XU").value;
-    const smsNo = "No";
-    const smsYes = "Yes";
-    const sms = "Yes";
-    // document.getElementById("disagreeSms").checked == true;
+
+    // SMS options (radioButton)
     const disagreeSms = document.getElementById("disagreeSms");
     const agreSms = document.getElementById("agreeSms");
-    // document.querySelector("input[name=main-categories]:checked").value;
-    // const smsAgree = document.getElementById("smsAgree");
-    // const smsDisagree = document.getElementById("smsDisagree");
+
 
     const phone = "VID_CONFERENCE";
     const person = "OUR_LOCATION";
