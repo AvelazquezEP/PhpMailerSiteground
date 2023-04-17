@@ -1,56 +1,8 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// header("Cache-Control: no-cache, must-revalidate");
+// header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
-
-function sendEmail($language, $email, $name, $lastName, $number, $question, $link)
-{
-    //Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailer(true);
-
-    // Email Template
-    $message = file_get_contents('mailTemplate.html');
-    $message = str_replace('%language%', $language, $message);
-    $message = str_replace('%email%', $email, $message);
-    $message = str_replace('%name%', $name, $message);
-    $message = str_replace('%lastName%', $lastName, $message);
-    $message = str_replace('%mobile%', $number, $message);
-    $message = str_replace('%message%', $question, $message);
-
-    //Server settings
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    $mail->isSMTP();
-
-    $mail->Host       = 'smtp.office365.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '473ECarnegie!';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
-
-    //Recipients
-    $mail->setFrom('support56@abogadoericprice.com');
-
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-    $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
-
-    //Content
-    $mail->isHTML(true);
-    $mail->Subject = 'Someone has opted in to form AEP Google PPC';
-    $mail->msgHTML($message);
-    $mail->AltBody = 'Sending email';
-
-    // Enviar correo
-    $mail->send();
-
-}
 
 // Location codes
 function getLocation($locationArg)
@@ -108,7 +60,7 @@ function redirects($loctionType, $locationCode, $nameArg, $lastNameArg, $emailAr
     return $redirectLink;
 }
 
-// Necesita de los links en strig
+// Necesita de los links en strig $strNAme, $stremail, etc ...
 function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage)
 {
     // Location type
@@ -116,20 +68,22 @@ function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $str
     $phone = "VID_CONFERENCE";
     $person = "OUR_LOCATION";
 
-    if ($meetingTypeArg == $phone) { //Phone/virtual
-        $locationT = strval($phone);
-        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
-        return $link;
-    } else { //Person
+    if ($meetingTypeArg == $person) { //Person
         $locationT = strval($person);
         $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
         return $link;
+    } else { //Phone
+        $locationT = strval($phone);
+        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+        return $link;
     }
     
+    $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+
     return $link;
 }
 
-// START TO GET THE RESULT OF THE FUNCTION
+// INICIO DE LA OBTENCION DEL LINK
 try {
   // Data from Form on index.html
   $name = $_POST['first_name'];
@@ -150,13 +104,19 @@ try {
   $strquestion = strval($question);
   $strlocation = strval($location);
   $strlanguage = strval($language);
-  $strsms = strval($sms);  
+  $strsms = strval($sms);
+
   $code = getLocation($location); //Llamado de la function
 
+//   $data = getLocation($strlocation);
 
-  $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+  $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
 
-  print $linkRedirect;
+
+  echo $linkRedirect;
+//   echo $code;
+
+//   sendEmail();
 
 //   $newlink = sendEmail($language, $email, $name, $lastName, $number, $question, $linkRedirect);
 //   print strval($newlink);

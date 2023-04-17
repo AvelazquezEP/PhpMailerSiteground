@@ -836,14 +836,10 @@
         <section class="bg-gray-50">
             <div class="px-4 mx-auto max-w-screen-md">
 
-                <!-- <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
-                    id="formSalesforce" class="formSalesforce" name="formSalesforce"> -->
-                <form action="salesforce.php" method="POST">
+                <!-- <form action="salesforce.php" method="POST"> -->
+                <form id="salesForceForm">
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
-                    <!-- <input type=hidden name="retURL" value="https://ericp138.sg-host.com/gracias.html"> -->
-                    <!-- <input type=hidden type=hidden name="retURL" value="https://ericp138.sg-host.com/mail.php?meetingType=VID_CONFERENCE&first_name=Test&last_name=form&email=test@form.com&mobile=123321&message=test&00N5f00000SB1X0=Los%20Angeles" id="redirectHtml"> -->
-                    <!-- <input type=hidden type=hidden name="retURL" value="https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f0000006rcbAAA&sumoapp_WhoId=0055f000007NttK&clientId=00Q5f00000P5ms2EAB"> -->
                     <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
                     <input type=hidden id="lead_source" name="lead_source" value="EP-CA-Website">
 
@@ -943,11 +939,11 @@
                             <div hidden id="recordTypeGroup">
                                 <div class="radioGroup">
                                     <input type="radio" id="meetingTypePhone" name="meetingType" name="Phone" value="Phone" />
-                                    <label for="Agree" id="phoneTxt">Por teléfono</label>
+                                    <label for="Agree" id="phoneTxt" checked="true">Por teléfono</label>
                                 </div>
                                 <div class="radioGroup">
                                     <input type="radio" id="meetingTypePerson" name="meetingType" name="Person"
-                                    value="Person" checked="true"/>
+                                    value="Person"/>
                                     <label for="Idisagree" id="personTxt">En Persona</label>
                                 </div>
                             </div>
@@ -956,10 +952,17 @@
                     <div class="text-center mt-8">
                         <button
                         name="sendButton"
-                        type="submit" id="ButtonSend"
+                        id="ButtonSend"
+                        onclick="sendData()"
                             class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Enviar
                         </button>
+                        <!-- <button
+                        name="sendButton"
+                        type="submit" id="ButtonSend"
+                            class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                            Enviar
+                        </button> -->
                     </div>
                 </form>
             </div>

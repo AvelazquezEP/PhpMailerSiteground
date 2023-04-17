@@ -3,7 +3,7 @@ const changeLocation = () => {
     const meetingTypePhone = document.getElementById('meetingTypePhone');
     const meetingTypePerson = document.getElementById('meetingTypePerson');
 
-    if (location == "San Bernardino") {
+    if (location == "San Bernardino") { //NUNCA ENTRA AUQI PORQUE NO LO TENGO EN LA LISTA
         meetingTypePhone.checked = false; //The radioButton (Phone) become false
         meetingTypePerson.checked = true; //The radioButton (Person) become true
 
@@ -22,9 +22,11 @@ const changeLocation = () => {
     } else {
         meetingTypePhone.disabled = false;
         meetingTypePerson.disabled = false;
+        meetingTypePerson.checked = true; //TODO DEBE SER EN PERSONA
 
-        document.getElementById("personTxt").style.color = 'black';
-        document.getElementById("phoneTxt").style.color = 'black';
+        //NO ESTAN VISIBLES NO ES NECESARIO ESTS DOS LINEA
+        // document.getElementById("personTxt").style.color = 'black';
+        // document.getElementById("phoneTxt").style.color = 'black';
     }
 
 }

@@ -9,41 +9,34 @@ const sendData = () => {
     const phonePhp = document.getElementById("mobile").value;
     const location = document.getElementById("00N5f00000SB1X0").value;
     const comment = document.getElementById("message").value;
-    const smsYes = document.getElementById("smsAgree").value;
-    const smsNO = document.getElementById("smsDisagree").value;
-    const sms = document.getElementById("00N5f00000SB1XU").value;
+    // const sms = document.getElementById("00N5f00000SB1XU").value;
+    // const sms = "NO";
+    // const smsAgree = document.getElementById("smsAgree");
+    // const smsDisagree = document.getElementById("smsDisagree");
+
     const phone = "VID_CONFERENCE";
     const person = "OUR_LOCATION";
 
-    // FORMDATA
-    const formData = new FormData();
-
-    formData.append("username", "Groucho");
-    formData.append("accountnum", 123456); // number 123456 is immediately converted to a string "123456"
-
-    // HTML file input, chosen by user
-    formData.append("userfile", fileInputElement.files[0]);
-
-    // JavaScript file-like object
-    const content = '<q id="a"><span id="b">hey!</span></q>'; // the body of the new file…
-    const blob = new Blob([content], { type: "text/xml" });
-
-    formData.append("webmasterfile", blob);
-
-    const request = new XMLHttpRequest();
-    request.open("POST", "http://foo.com/submitform.php");
-    request.send(formData);
-
+    // if (smsAgree.checked) {
+    //     sms = "Yes";
+    // } else {
+    //     sms = "No";
+    // }
 
     // SUMO SCHEDULER APP
-    sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone);
+
+    if (location == "National") {
+        sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone);
+    } else {
+        sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, person);
+    }
 }
 
 const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type) => {
 
     $.ajax({
         type: 'POST',
-        url: 'https://ericp138.sg-host.com/mail.php',
+        url: 'mail.php',
         data: {
             "00N5f00000SB1Ws": languages,
             first_name: name,
@@ -56,7 +49,7 @@ const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type)
         },
         dataType: 'text',
         success: function (data) {
-            alert(data);
+            window.location.replace(data);
         }
     });
 

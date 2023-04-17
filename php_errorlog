@@ -70,3 +70,15 @@ Stack trace:
 #0 /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php(93): redirectsVirtual('VID_CONFERENCE', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 #1 {main}
   thrown in /home/customer/www/ericp138.sg-host.com/public_html/salesforce.php on line 162
+[17-Apr-2023 15:57:34 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function redirectsVirtual(), 8 passed in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 73 and exactly 9 expected in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:50
+Stack trace:
+#0 /home/customer/www/ericp138.sg-host.com/public_html/mail.php(73): redirectsVirtual('VID_CONFERENCE', 'a1b5f000000eT8b...', 'Test', 'form SD', '', '686544212354', 'San Diego', 'Spanish')
+#1 /home/customer/www/ericp138.sg-host.com/public_html/mail.php(110): getLink('VID_CONFERENCE', 'a1b5f000000eT8b...', 'Test', 'form SD', '', '686544212354', 'San Diego', 'Spanish', 'NO')
+#2 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 50
+[17-Apr-2023 15:57:51 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function redirectsVirtual(), 8 passed in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 73 and exactly 9 expected in /home/customer/www/ericp138.sg-host.com/public_html/mail.php:50
+Stack trace:
+#0 /home/customer/www/ericp138.sg-host.com/public_html/mail.php(73): redirectsVirtual('VID_CONFERENCE', 'a1b5f000000eT8b...', 'Test', 'form SD', 'sd@.com', '686544212354', 'San Diego', 'Spanish')
+#1 /home/customer/www/ericp138.sg-host.com/public_html/mail.php(110): getLink('VID_CONFERENCE', 'a1b5f000000eT8b...', 'Test', 'form SD', 'sd@.com', '686544212354', 'San Diego', 'Spanish', 'NO')
+#2 {main}
+  thrown in /home/customer/www/ericp138.sg-host.com/public_html/mail.php on line 50
