@@ -10,29 +10,43 @@ const sendData = () => {
     const location = document.getElementById("00N5f00000SB1X0").value;
     const comment = document.getElementById("message").value;
     // const sms = document.getElementById("00N5f00000SB1XU").value;
-    // const sms = "NO";
+    const smsNo = "No";
+    const smsYes = "Yes";
+    const sms = "Yes";
+    // document.getElementById("disagreeSms").checked == true;
+    const disagreeSms = document.getElementById("disagreeSms");
+    const agreSms = document.getElementById("agreeSms");
+    // document.querySelector("input[name=main-categories]:checked").value;
     // const smsAgree = document.getElementById("smsAgree");
     // const smsDisagree = document.getElementById("smsDisagree");
 
     const phone = "VID_CONFERENCE";
     const person = "OUR_LOCATION";
 
-    // if (smsAgree.checked) {
-    //     sms = "Yes";
-    // } else {
-    //     sms = "No";
-    // }
+    if (disagreeSms.checked == true) {
+        if (location == "National") {
+            sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone, "No");
+        } else {
+            sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, person, "No");
+        }
+    } else {
+        if (location == "National") {
+            sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone, "Yes");
+        } else {
+            sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, person, "Yes");
+        }
+    }
 
     // SUMO SCHEDULER APP
 
-    if (location == "National") {
-        sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone);
-    } else {
-        sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, person);
-    }
+    // if (location == "National") {
+    //     sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, phone, sms);
+    // } else {
+    //     sendToPHP(language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, comment, location, person, sms);
+    // }
 }
 
-const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type) => {
+const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type, smsA) => {
 
     $.ajax({
         type: 'POST',
@@ -46,6 +60,7 @@ const sendToPHP = (languages, name, lastName, phone, mail, comment, place, type)
             message: comment,
             "00N5f00000SB1X0": place,
             meetingType: type,
+            "00N5f00000SB1XU": smsA,
         },
         dataType: 'text',
         success: function (data) {

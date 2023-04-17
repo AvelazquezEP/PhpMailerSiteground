@@ -47,21 +47,21 @@ function getLocation($locationArg)
 }
 
 // Function to redirect to Virtual
-function redirectsVirtual($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg)
+function redirectsVirtual($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsA)
 {
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg;
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsA;
     return $redirectLink;
 }
 
-// Function to redirect to In-Person
-function redirects($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg)
+// Function to redirect to In-Person - CON OPCIONES DE SMS
+function redirects($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsA)
 {
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg;
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsA;
     return $redirectLink;
 }
 
 // Necesita de los links en strig $strNAme, $stremail, etc ...
-function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage)
+function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $smsA)
 {
     // Location type
     $locationT = "";
@@ -70,15 +70,15 @@ function getLink($meetingTypeArg, $code, $strName, $strlastName, $stremail, $str
 
     if ($meetingTypeArg == $person) { //Person
         $locationT = strval($person);
-        $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+        $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $smsA);
         return $link;
     } else { //Phone
         $locationT = strval($phone);
-        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+        $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $smsA);
         return $link;
     }
     
-    $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+    // $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
 
     return $link;
 }
@@ -110,17 +110,10 @@ try {
 
 //   $data = getLocation($strlocation);
 
-  $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage);
+  $linkRedirect = getLink($meetingTypeP, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
 
   echo $linkRedirect;
-//   echo $code;
-
-//   sendEmail();
-
-//   $newlink = sendEmail($language, $email, $name, $lastName, $number, $question, $linkRedirect);
-//   print strval($newlink);
-
     
 } catch (Exception $e) {
     header("Location: https://ericp138.sg-host.com/sorry.html"); // <--- show this site when something is wrong
