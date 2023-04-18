@@ -36,15 +36,16 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->Port       = 587;
 
     //Recipients
-    $mail->setFrom('support56@abogadoericprice.com');
+    $mail->setFrom('support56@abogadoericprice.com'); //Correo saliente
 
+    // Correos a quienes le llegan
     // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to form AEP Google PPC';
-    $mail->msgHTML($message);
+    $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
     $mail->AltBody = 'Sending email';
 
     // Enviar correo
@@ -97,7 +98,6 @@ function getLocation($location)
 // Build the link for InPerson appointment
 function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
 {
-    // Los Angeles
     $personLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType
         . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
         . "&sumoapp_WhoId=0055f000007NE9T"
@@ -114,7 +114,6 @@ function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email,
 // Build the link for Virtual appointment
 function redirectVirtual($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
 {
-    // Los Angeles
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType
         . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
         . "&sumoapp_WhoId=0055f000007NE9T"
