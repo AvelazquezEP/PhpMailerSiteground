@@ -7,94 +7,14 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 
-// Data source: Html Form
-$namec = $_POST['firstName'];
-$lastNamec = $_POST['lastName'];
-$emailc = $_POST['email'];
-$numberc = $_POST['phone'];
-$questionc = $_POST['message'];
-$locationc = $_POST['00N5f00000SB1X0'];
-
-// Data to send Get from index.html (CONTACT FORM)
-$name = $_POST['first_name'];
-$lastName = $_POST['last_name'];
-$email = $_POST['email'];
-$number = $_POST['mobile'];
-$question = $_POST['message'];
-$location = $_POST['00N5f00000SB1X0'];
-$language = $_POST['00N5f00000SB1Ws'];
-$sms = $_POST['00N5f00000SB1XU'];
-$meetingType = $_POST['meetingType'];
-
-// Convert inputs to Sting
-$strName = strval($name);
-$strlastName = strval($lastName);
-$stremail = strval($email);
-$strnumber = strval($number);
-$strquestion = strval($question);
-$strlocation = strval($location);
-$strlanguage = strval($language);
-$strsms = strval($sms);
-
-// Location codes
-$code = "";
-$LACode = "a1b5f000000eT4OAAU";
-$OCCode = "a1b5f000000eT4PAAU";
-$SDCode = "a1b5f000000eT8bAAE";
-$SMCode = "a1b5f000000eT8gAAE";
-$CHCode = "a1b5f000000enBnAAI";
-// $NCode = ""; TODAVIA NO HAY CODIGO
-// $SBCode = ""; TODAVIA NO HAY CODIGO
-
-switch ($location) { //IN-PERSON (Falta san berdandino)
-    case "Los Angeles":
-        $code = $LACode;
-        break;
-    case "Orange County":
-        $code = strval($OCCode);
-        break;
-    case "San Diego":
-        $code = strval($SDCode);
-        break;
-    case "San Marcos":
-        $code = strval($SMCode);
-        break;
-    case "Chicago":
-        $code = strval($CHCode);
-        break;
-    case "National":
-        // $code = $LACode;
-        // $code = strval($NCode);
-        break;
-    case "San Bernardino":
-        // $code = strval($SBCode);
-        break;
-    default:
-        $code = strval($LACode);
-        break;
-}
-
-// Location type
-$locationT = "";
-$phone = "VID_CONFERENCE";
-$person = "OUR_LOCATION";
-
-if ($meetingType == "Phone") { //Phone
-    $locationT = strval($phone);
-    $link = redirectsVirtual($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-} else { //Person
-    $locationT = strval($person);
-    $link = redirects($locationT, $code, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
-}
-
-try {
-
+// Send a email
+function sendEmail($language, $email, $name, $lastName, $number, $question)
+{
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
     // Email Template
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%language%', $language, $message);
@@ -129,31 +49,142 @@ try {
 
     // Enviar correo
     $mail->send();
+}
 
-    // Además, una vez que lo hizo, noté que el formulario de admisión no se agrega a la cuenta en Salesforce
+// GET LOCATION CODE
+function getLocation($location)
+{
+    $code = "";
+    $LACode = "a1b5f000000eT4OAAU";
+    $OCCode = "a1b5f000000eT4PAAU";
+    $SDCode = "a1b5f000000eT8bAAE";
+    $SMCode = "a1b5f000000eT8gAAE";
+    $CHCode = "a1b5f000000enBnAAI";
+    // $NCode = ""; TODAVIA NO HAY CODIGO
+    // $SBCode = ""; TODAVIA NO HAY CODIGO
+
+    switch ($location) { //IN-PERSON (Falta san berdandino)
+        case "Los Angeles":
+            $code = $LACode;
+            break;
+        case "Orange County":
+            $code = strval($OCCode);
+            break;
+        case "San Diego":
+            $code = strval($SDCode);
+            break;
+        case "San Marcos":
+            $code = strval($SMCode);
+            break;
+        case "Chicago":
+            $code = strval($CHCode);
+            break;
+        case "National":
+            // $code = $LACode;
+            // $code = strval($NCode);
+            break;
+        case "San Bernardino":
+            // $code = strval($SBCode);
+            break;
+        default:
+            $code = strval($LACode);
+            break;
+    }
+
+    return $code;
+}
+
+// Build the link for InPerson appointment
+function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
+{
+    // Los Angeles
+    $personLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType
+        . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
+        . "&sumoapp_WhoId=0055f000007NE9T"
+        . "&a2=" . $name
+        . "&a3=" . $lastName
+        . "&a5=" . $email
+        . "&a6=" . $number
+        . "&a8=" . $location
+        . "&a9=" . $language
+        . "&a10=" . $sms;
+    return $personLink;
+}
+
+// Build the link for Virtual appointment
+function redirectVirtual($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
+{
+    // Los Angeles
+    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType
+        . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
+        . "&sumoapp_WhoId=0055f000007NE9T"
+        . "&a2=" . $name
+        . "&a3=" . $lastName
+        . "&a5=" . $email
+        . "&a6=" . $number
+        . "&a8=" . $location
+        . "&a9=" . $language
+        . "&a10=" . $sms;;
+    return $redirectLink;
+}
+
+function getLink($meetingType, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms)
+{
+    $type = "";
+    $phone = "VID_CONFERENCE"; //Virtual
+    $person = "OUR_LOCATION"; //In-Person
+
+    if ($meetingType == "Phone") { //Phone
+        $type = strval($phone);
+        $link = redirectVirtual($type, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms);
+        return $link;
+    } else { //Person
+        $type = strval($person);
+        $link = redirectInPerson($type, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms);
+        return $link;
+    }
+}
+
+// Location type
+
+try {
+    // Data to send Get from index.html (CONTACT FORM)
+    $name = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $email = $_POST['email'];
+    $number = $_POST['mobile'];
+    $question = $_POST['message'];
+    $location = $_POST['00N5f00000SB1X0'];
+    $language = $_POST['00N5f00000SB1Ws'];
+    $sms = $_POST['00N5f00000SB1XU'];
+    $meetingType = $_POST['meetingType'];
+
+    // Convert inputs to Sting
+    $strName = strval($name);
+    $strlastName = strval($lastName);
+    $stremail = strval($email);
+    $strnumber = strval($number);
+    $strquestion = strval($question);
+    $strlocation = strval($location);
+    $strlanguage = strval($language);
+    $strsms = strval($sms);
+
+    $locationCode = getLocation($location);
+
+    // Function to Send email
+    sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
+
+    // Get the Link (URL for redirect to the scheduler app)
+    $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+
     try {
         header("Location: " . $link);
         exit;
-    } catch(Exception $e) {
+    } catch (Exception $e) {
         header("Location: https://ericp138.sg-host.com/sorry.html");
         exit;
     }
-
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
-}
-
-function redirects ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
-{
-    // Los Angeles
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
-    return $redirectLink;
-}
-
-function redirectsVirtual ($loctionType, $locationCode, $nameArg, $lastNameArg, $emailArg, $numberArg, $locationArg, $languageArg, $smsArg)
-{
-    // Los Angeles
-    $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode . "&sumoapp_WhoId=0055f000007NE9T" . "&a2=" . $nameArg . "&a3=" . $lastNameArg . "&a5=" . $emailArg . "&a6=" . $numberArg . "&a8=" . $locationArg . "&a9=" . $languageArg . "&a10=" . $smsArg;
-    return $redirectLink;
 }
