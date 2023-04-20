@@ -204,18 +204,33 @@ try {
     // // Get the Link (URL for redirect to the scheduler app)
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
-    sleep(9);
-    header("Location: " . $link);
+    header("refresh:5; url=" . $link);
 
-    // try {
-    //     sleep(3);
-    //     header("Location: " . $link);
-    //     exit;
-    // } catch (Exception $e) {
-    //     header("Location: https://ericp138.sg-host.com/sorry.html");
-    //     exit;
-    // }
+    // sleep(9);
+    // header("Location: " . $link);
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    header("Location: https://ericp138.sg-host.com/sorry.html", true, 303);    // <--- show this site when something is wrong
+    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong
 }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperanding</title>
+</head>
+<body>
+    <div class="container">
+        <div class="emailContainer">
+            <h1 class="title">Enviando correo</h1>
+            <p> Enviando correo </p>
+        </div>
+    </div>
+</body>
+
+</html>
