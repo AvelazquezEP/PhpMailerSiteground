@@ -190,7 +190,7 @@ try {
     curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_exec($curl);
-    curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar comentarlo
+    curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
 
     // Envia el correo con los datos obtenidos en las variables anteriores.
     sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
