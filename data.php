@@ -25,12 +25,12 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $message = str_replace('%message%', $question, $message);
 
     //Server settings
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER; <-- imprime todos los pasos que realiza el proceso de enviar correo
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '473ECarnegie!';
+    $mail->Password   = '100East!';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
@@ -38,7 +38,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->setFrom('support56@abogadoericprice.com');
 
     // Correos a quienes le llegan
-    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
@@ -192,8 +192,8 @@ try {
     curl_exec($curl);
     curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
 
-    // Envia el correo con los datos obtenidos en las variables anteriores.
-    sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
+    // Envia el correo con los datos obtenidos en las variables anteriores.    
+    // sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
 
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
