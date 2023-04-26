@@ -169,11 +169,10 @@ try {
     $strlanguage = strval($language);
     $strsms = strval($sms);
     $strOid = strval($oid);
-    // $strSourceLead = strval($sourceLead); //No se necesita porque se registra directo en SUMO SCHEDULER
-
+    //No se necesita LEADSORUCE porque se registra por medio de SUMO Scheduler
     $locationCode = getLocation($location);
 
-    // Send to WEB-TO-LEAD
+    // WEB-TO-LEAD
     $url = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
     // Solo se usa la inforacion necesaria para la creacion del LEAD en SALESFORCE.
     $data = [
