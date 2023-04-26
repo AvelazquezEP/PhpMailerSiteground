@@ -200,7 +200,7 @@ try {
     // Esperamos 5s antes de poder redirigir al link.
     // mientras pasa el tiempo declarado se moestrar una vista con informacion necesario (vista de espera o notificar que se esta procesando su informacion)
     // De esta forma podemos dar tiempo a que el proceso de creacino del LEAD se pueda completar
-    header("refresh:25; url=" . $link);
+    header("refresh:5; url=" . $link);
     
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
