@@ -25,12 +25,12 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $message = str_replace('%message%', $question, $message);
 
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '100East!';
+    $mail->Password   = '$L4ckC@n1ry80!#>';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
@@ -60,8 +60,8 @@ function getLocation($location)
     $SDCode = "a1b5f000000eT8bAAE";
     $SMCode = "a1b5f000000eT8gAAE";
     $CHCode = "a1b5f000000enBnAAI";
+    $SBCode = "a1b5f000001signAAA";
     // $NCode = ""; no tiene codigo ya que se registra como un APPOINTMENT VIRTUAL
-    // $SBCode = ""; NO HAY CODIGO/ID este lo debe de tener Tiffany ya se mando correo no contesto
 
     switch ($location) { //IN-PERSON (Falta san berdandino)
         case "Los Angeles":
@@ -79,11 +79,11 @@ function getLocation($location)
         case "Chicago":
             $code = strval($CHCode);
             break;
+        case "San Bernardino":
+            $code = strval($SBCode);
+            break;
         case "National":
             // $code = strval($NCode);
-            break;
-        case "San Bernardino":
-            // $code = strval($SBCode);
             break;
         default:
             $code = strval($LACode);
@@ -172,27 +172,8 @@ try {
     //No se necesita LEADSORUCE porque se registra por medio de SUMO Scheduler
     $locationCode = getLocation($location);
 
-    // WEB-TO-LEAD
-    $url = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
-    // Solo se usa la inforacion necesaria para la creacion del LEAD en SALESFORCE.
-    $data = [
-        'oid' => $strOid,
-        'first_name' => $strName,
-        'last_name' => $strlastName,
-        'email' => $stremail,
-        'mobile' => $strnumber
-    ];
-
-    // Se usa CURL para poder realizar un envio de tipo POST al $url, tomando en cuenta como parametros el array $data
-    $curl = curl_init($url);
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_exec($curl);
-    curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
-
     // Envia el correo con los datos obtenidos en las variables anteriores.    
-    // sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
+    sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
 
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
@@ -200,8 +181,28 @@ try {
     // Esperamos 5s antes de poder redirigir al link.
     // mientras pasa el tiempo declarado se moestrar una vista con informacion necesario (vista de espera o notificar que se esta procesando su informacion)
     // De esta forma podemos dar tiempo a que el proceso de creacino del LEAD se pueda completar
-    header("refresh:5; url=" . $link);
-    
+    // header("url=" . $link);
+    header("Location: " . $link);
+
+    // WEB-TO-LEAD
+    // $url = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
+    // Solo se usa la inforacion necesaria para la creacion del LEAD en SALESFORCE.
+    // $data = [
+    //     'oid' => $strOid,
+    //     'first_name' => $strName,
+    //     'last_name' => $strlastName,
+    //     'email' => $stremail,
+    //     'mobile' => $strnumber
+    // ];
+
+    // Se usa CURL para poder realizar un envio de tipo POST al $url, tomando en cuenta como parametros el array $data
+    // $curl = curl_init($url);
+    // curl_setopt($curl, CURLOPT_POST, true);
+    // curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    // curl_exec($curl);
+    // curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
+
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
@@ -210,7 +211,7 @@ try {
 ?>
 
 <!-- Empieza la vista que se muestra mientras se procesan los datos -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -274,4 +275,4 @@ try {
 
 </body>
 
-</html>
+</html> -->
