@@ -157,7 +157,7 @@ try {
     $sms = $_POST['00N5f00000SB1XU'];
     $meetingType = $_POST['meetingType'];
     $oid = $_POST['oid'];
-    // $sourceLead = $_POST['sourceLead']; //No se necesita porque se registra directo en SUMO SCHEDULER
+    //No se necesita LEADSORUCE porque se registra por medio de SUMO Scheduler
 
     // Toma los inputs anteriores y los convierte a STRING, esto se usa en ciertas functions.
     $strName = strval($name);
@@ -178,12 +178,17 @@ try {
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
-    // Esperamos 5s antes de poder redirigir al link.
-    // mientras pasa el tiempo declarado se moestrar una vista con informacion necesario (vista de espera o notificar que se esta procesando su informacion)
-    // De esta forma podemos dar tiempo a que el proceso de creacino del LEAD se pueda completar
     // header("url=" . $link);
-    header("Location: " . $link);
+    header("Location: " . $link);    
 
+} catch (Exception $e) {
+    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
+    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
+}
+
+?>
+
+<!-- CODE TO WEB-TO-LEAD
     // WEB-TO-LEAD
     // $url = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
     // Solo se usa la inforacion necesaria para la creacion del LEAD en SALESFORCE.
@@ -202,77 +207,73 @@ try {
     // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     // curl_exec($curl);
     // curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
-
-} catch (Exception $e) {
-    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
-    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
-}
-
-?>
+-->
 
 <!-- Empieza la vista que se muestra mientras se procesan los datos -->
-<!-- <!DOCTYPE html>
-<html lang="en">
+<!-- HTML SITE IN THE SAME PHP
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/images/EP_Website-01.png">
-    <title>Sending Data</title>
-</head>
-<style>
-    body {
-        background-color: #001e3e;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/images/EP_Website-01.png">
+        <title>Sending Data</title>
+    </head>
+    <style>
+        body {
+            background-color: #001e3e;
+        }
 
-    .container {
-        padding-top: 4rem;
-        text-align: center;
-        font-family: sans-serif;
-        color: white;
-    }
+        .container {
+            padding-top: 4rem;
+            text-align: center;
+            font-family: sans-serif;
+            color: white;
+        }
 
-    .container>h1 {
-        font-size: 3rem;
-    }
+        .container>h1 {
+            font-size: 3rem;
+        }
 
-    .container>p {
-        font-size: 1.5rem;
-    }
+        .container>p {
+            font-size: 1.5rem;
+        }
 
-    .dots {
-        font-size: 2rem;
-    }
-</style>
+        .dots {
+            font-size: 2rem;
+        }
+    </style>
 
-<body>
-    <div class="container">
-        <h1>Sending the information.</h1>
-        <p>Wait a moment please.</p>
-        <p>We are processing your data to be able to provide better appointment options.</p>
-        <span class="dots" id="wait">.</span>
-    </div>
+    <body>
+        <div class="container">
+            <h1>Sending the information.</h1>
+            <p>Wait a moment please.</p>
+            <p>We are processing your data to be able to provide better appointment options.</p>
+            <span class="dots" id="wait">.</span>
+        </div>
 
-    <script>
-        window.dotsGoingUp = true;
-        var dots = window.setInterval(function () {
-            var wait = document.getElementById("wait");
-            if (window.dotsGoingUp)
-                wait.innerHTML += ".";
-            else {
-                wait.innerHTML = wait.innerHTML.substring(1, wait.innerHTML.length);
-                if (wait.innerHTML === "")
-                    window.dotsGoingUp = true;
-            }
-            if (wait.innerHTML.length > 5)
-                window.dotsGoingUp = false;
+        <script>
+            window.dotsGoingUp = true;
+            var dots = window.setInterval(function () {
+                var wait = document.getElementById("wait");
+                if (window.dotsGoingUp)
+                    wait.innerHTML += ".";
+                else {
+                    wait.innerHTML = wait.innerHTML.substring(1, wait.innerHTML.length);
+                    if (wait.innerHTML === "")
+                        window.dotsGoingUp = true;
+                }
+                if (wait.innerHTML.length > 5)
+                    window.dotsGoingUp = false;
 
 
 
-        }, 500);
-    </script>
+            }, 500);
+        </script>
 
-</body>
+    </body>
 
-</html> -->
+    </html> 
+-->
