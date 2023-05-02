@@ -36,10 +36,15 @@ body {
             rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
 }
 
-.testimonials>figure:nth-child(even) {
+.testimonials>figure{
+    box-shadow: 1px 1px 4px #212122;
+}
+
+/* .testimonials>figure:nth-child(even) {
     background-color: #001E3E;
 }
 
 .testimonials>figure:nth-child(odd) {
-    background-color: rgb(233, 166, 103);
-}
+    background-color: white;
+    /* background-color: rgb(233, 166, 103); */
+} */
