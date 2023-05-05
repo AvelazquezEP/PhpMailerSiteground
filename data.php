@@ -61,7 +61,7 @@ function getLocation($location)
     $SMCode = "a1b5f000000eT8gAAE";
     $CHCode = "a1b5f000000enBnAAI";
     $SBCode = "a1b5f000001signAAA";
-    // $NCode = ""; no tiene codigo ya que se registra como un APPOINTMENT VIRTUAL
+    // $NCode = ""; no tiene codigo ya que se registra como un cita VIRTUAL
 
     switch ($location) { //IN-PERSON (Falta san berdandino)
         case "Los Angeles":
@@ -83,7 +83,7 @@ function getLocation($location)
             $code = strval($SBCode);
             break;
         case "National":
-            // $code = strval($NCode);
+            // NO se usa codigo de Location porque solo permite citas Virtuales.
             break;
         default:
             $code = strval($LACode);
@@ -96,7 +96,7 @@ function getLocation($location)
 // Build the link for In-Person appointment
 function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
 {
-    // El de la linea (Https://...) hace uso de un link para las citas en VIRTUAL (NATIONAL es el unico que tiene cita virtual)
+    // El de la linea (Https://...) hace uso de un link para las citas en VIRTUAL (NATIONAL es el unico que no permite citas en persona SOLO cita virtual)
     $personLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType
         . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
         . "&sumoapp_WhoId=0055f000007NE9T"
@@ -178,8 +178,8 @@ try {
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
-    // header("url=" . $link);
-    header("Location: " . $link);    
+    // header("url=" . $link) //Este ya no se usa, pero es cuando es necesario esperar un tiempo para redirigir a la siguiente página;
+    header("Location: " . $link);
 
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle

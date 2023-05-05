@@ -193,15 +193,15 @@ try {
     curl_close($curl);    
 
     // Envia el correo con los datos obtenidos en las variables anteriores.
-    sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
+    // sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
 
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
-    $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
+    // $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
     // Esperamos 5s antes de poder redirigir al link.
     // mientras pasa el tiempo declarado se moestrar una vista con informacion necesario (vista de espera o notificar que se esta procesando su informacion)
     // De esta forma podemos dar tiempo a que el proceso de creacino del LEAD se pueda completar
-    header("refresh:5; url=" . $link);
+    // header("refresh:5; url=" . $link);
     
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
