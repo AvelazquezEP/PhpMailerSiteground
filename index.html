@@ -817,8 +817,8 @@
         </p>
         <section class="bg-gray-50">
             <div class="px-4 mx-auto max-w-screen-md">
-                <!-- <form action="formTest.php" method="POST"> -->
-                <form action="data.php" method="POST">
+                <!-- <form action="data.php" method="POST"> -->
+                <div>
                     <!-- INPUT HIDDEN / DON'T DELETE / DON'T NEED LABELS-->
                     <input type=hidden name="oid" value="00D5f000006OVX8" id="oid">
                     <input type=hidden type=hidden id="00N5f00000SB1Ws" name="00N5f00000SB1Ws" title="Language" value="Spanish">
@@ -925,16 +925,17 @@
                         </div>
                     </div>
                     <div class="text-center mt-8">
+                        <!-- type="submit" -->
                         <button
                         name="sendButton"
-                        type="submit"
+                        onclick="sendData()"
                         id="ButtonSend"
                             class="w-11/12 py-2.5 px-5 mr-2 mb-2 text-xl font-medium text-white focus:outline-none bg-orange-400 rounded-lg border border-gray-200 hover:bg-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Enviar
                         </button>
                     </div>
-                </form>
-            </div>
+                    </form>
+                </div>
         </section>
     </div>
 
@@ -1144,6 +1145,7 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="apiForm.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/smoothScroll.js"></script>
     <script src="js/toggle.js"></script>
