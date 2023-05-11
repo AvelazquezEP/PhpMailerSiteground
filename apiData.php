@@ -21,7 +21,7 @@ function getLeads($mail)
 {
     // $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/query/?q=SELECT+email+from+Lead';    
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/search/?q=FIND+%7B' . $mail . '%7D';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQIxE1YdCJSv0axUnIjimcYRe1J2s0cee_opDbOvd24No1i4kH63pxdpRmJxtpYdIS8q65kqh9feonpNvDaJzFYG3AQ_Z";
+    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
 
     $cURLConnection = curl_init();
     curl_setopt($cURLConnection, CURLOPT_URL, $urlApi);
@@ -40,7 +40,7 @@ function getLeads($mail)
 
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJjlAN8d227IS_vgzGkjbimTGnZgz4PBb3WDfdd12RxvUJRdiCZ.lnFvzvbgxQxfDy9rgdle7gcgUgq3i5WvVR.fuy56";
+    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
 
     $dataArray = [
         'FirstName' => $first_name,

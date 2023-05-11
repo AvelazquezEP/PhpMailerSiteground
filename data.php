@@ -30,7 +30,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '$L4ckC@n1ry80!#>';
+    $mail->Password   = '500LaTerrazaBlvd.';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
