@@ -30,7 +30,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';
-    $mail->Password   = '500LaTerrazaBlvd.';
+    // $mail->Password   = '500LaTerrazaBlvd.';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
@@ -173,7 +173,7 @@ try {
     $locationCode = getLocation($location);
 
     // Envia el correo con los datos obtenidos en las variables anteriores.    
-    sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
+    // sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
 
     // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
