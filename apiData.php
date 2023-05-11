@@ -19,9 +19,10 @@ try {
 // FUNCTIONS SECTIONS
 function getLeads($mail)
 {
-    // $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/query/?q=SELECT+email+from+Lead';    
+    // $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/query/?q=SELECT+email+from+Lead';
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/search/?q=FIND+%7B' . $mail . '%7D';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
+    // $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
+    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQMftVaUgQNFq_QAEAxqR6GXF6G8enXOMhe7IUMnw1s72Xq_.OLA32vtMvw28L.aV_rm9V9o8enRklQXn_4E1QKAUQOkG";
 
     $cURLConnection = curl_init();
     curl_setopt($cURLConnection, CURLOPT_URL, $urlApi);
