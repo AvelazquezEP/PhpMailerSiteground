@@ -27,8 +27,8 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     $token = $new_access_token;
 
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
-    // $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQBvqw5_ZQWz9OU_kuU7LZ6ZClrwxx_kxZQnba0U6WL.cEIhU3fqYWECB6UlNxus7KBcFISPgF.QrJqh6xsJ7uINzp21c";
-    $authorization = "Authorization: Bearer " . $token;
+    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQBvqw5_ZQWz9OU_kuU7LZ6ZClrwxx_kxZQnba0U6WL.cEIhU3fqYWECB6UlNxus7KBcFISPgF.QrJqh6xsJ7uINzp21c";
+    // $authorization = "Authorization: Bearer " . $token;
 
     $dataArray = [
         'FirstName' => $first_name,
