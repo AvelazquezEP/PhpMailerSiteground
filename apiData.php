@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 try {
     $firstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
@@ -19,8 +21,14 @@ try {
 
 // FUNCTIONS SECTIONS
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
+
+    $accessToken = $_SESSION["newKey"]; //<--Obtengo el token
+    $new_access_token = strval($accessToken->access_token);
+    $token = $new_access_token;
+
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQBvqw5_ZQWz9OU_kuU7LZ6ZClrwxx_kxZQnba0U6WL.cEIhU3fqYWECB6UlNxus7KBcFISPgF.QrJqh6xsJ7uINzp21c";
+    // $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQBvqw5_ZQWz9OU_kuU7LZ6ZClrwxx_kxZQnba0U6WL.cEIhU3fqYWECB6UlNxus7KBcFISPgF.QrJqh6xsJ7uINzp21c";
+    $authorization = "Authorization: Bearer " . $token;
 
     $dataArray = [
         'FirstName' => $first_name,
