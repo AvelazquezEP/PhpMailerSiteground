@@ -16,32 +16,11 @@ try {
 } catch (Exception $e) {
     header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- show this site when something is wrong    
 }
+
 // FUNCTIONS SECTIONS
-function getLeads($mail)
-{
-    // $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/query/?q=SELECT+email+from+Lead';
-    $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/search/?q=FIND+%7B' . $mail . '%7D';
-    // $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQMftVaUgQNFq_QAEAxqR6GXF6G8enXOMhe7IUMnw1s72Xq_.OLA32vtMvw28L.aV_rm9V9o8enRklQXn_4E1QKAUQOkG";
-
-    $cURLConnection = curl_init();
-    curl_setopt($cURLConnection, CURLOPT_URL, $urlApi);
-    curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($cURLConnection, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt($cURLConnection, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json', $authorization));
-    curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
-    $leadList = curl_exec($cURLConnection);
-    $jsonArrayResponse = json_decode($leadList);
-    curl_close($cURLConnection);
-
-    // return $leadList;
-    return $jsonArrayResponse;
-}
-
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQJahbqBIArz_gJ2oyxUoOKJRcJA93QUIj2IL.Q9.Sqx5FS9T_mtpl8SHPtUMVYlxg2MGjYN7tJ2h1hjGC0UAzLjx_0WS";
+    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQBvqw5_ZQWz9OU_kuU7LZ6ZClrwxx_kxZQnba0U6WL.cEIhU3fqYWECB6UlNxus7KBcFISPgF.QrJqh6xsJ7uINzp21c";
 
     $dataArray = [
         'FirstName' => $first_name,

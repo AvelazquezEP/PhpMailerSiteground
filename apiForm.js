@@ -69,13 +69,13 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
 
 // GET LOCATION CODE
 const getLocation = (location) => {
-    code = "";
-    LACode = "a1b5f000000eT4OAAU";
-    OCCode = "a1b5f000000eT4PAAU";
-    SDCode = "a1b5f000000eT8bAAE";
-    SMCode = "a1b5f000000eT8gAAE";
-    CHCode = "a1b5f000000enBnAAI";
-    SBCode = "a1b5f000001signAAA";
+    var code = "";
+    let LACode = "a1b5f000000eT4OAAU";
+    let OCCode = "a1b5f000000eT4PAAU";
+    let SDCode = "a1b5f000000eT8bAAE";
+    let SMCode = "a1b5f000000eT8gAAE";
+    let CHCode = "a1b5f000000enBnAAI";
+    let SBCode = "a1b5f000001signAAA";
     // $NCode = ""; TODAVIA NO HAY CODIGO
 
     switch (location) {
