@@ -22,13 +22,12 @@ try {
 // FUNCTIONS SECTIONS
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
 
-    $accessToken = $_SESSION["newKey"]; //<--Obtengo el token
-    $new_access_token = strval($accessToken->access_token);
-    $token = $new_access_token;
+    $Token = getLastToken();
+    $newToken = $Token->new_token;
 
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
-    $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQAVcy1d2L4sPQPBqsvBoiL13tyFNS.rErqX9HCCXlfio7H2cShqeXhOlc88ybD6KhyL.5py6sqV2KHC33wQ8w4EMr7qA";
-    // $authorization = "Authorization: Bearer " . $token;
+    // $authorization = "Authorization: Bearer 00D5f000006OVX8!ARcAQAVcy1d2L4sPQPBqsvBoiL13tyFNS.rErqX9HCCXlfio7H2cShqeXhOlc88ybD6KhyL.5py6sqV2KHC33wQ8w4EMr7qA";
+    $authorization = "Authorization: Bearer " . $newToken;
 
     $dataArray = [
         'FirstName' => $first_name,
@@ -51,4 +50,21 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     curl_close($ch);
 
     return $result;    
+}
+
+function getLastToken()
+{
+    // include_once('connection.inc.php');
+    $host = "ericp138.sg-host.com";
+    $port = "5432";
+    $dbname = "dbhxe3qcvkv7wx";
+    $user = "uexeeqopvpkgb";
+    $password = "9gXq&(jy1)b4";
+
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $dbconn = pg_connect($connection_string) or die('Could not reach database.');
+
+    $sql = "select id_token, new_token from tokenacess order by id_token desc limit 1";
+    $result = pg_query($sql);
+    return pg_fetch_object($result);
 }
