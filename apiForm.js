@@ -13,13 +13,7 @@ const sendData = () => {
     let comment = document.getElementById("message").value;
     let sms = document.getElementById("00N5f00000SB1XU").value;
 
-
-    // createLead(oid, leadSource, language, firstNamePhp, lastNamePhp, phonePhp, emailPhp, location, "Yes");
-    // getLead(emailPhp);
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
-    // sendEmail();
-    // createLeadApi();
-    // sendToSUMO(language, firstName, lastName, mobilePhone, email, comment, location, meetingType, "Yes");
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment) => {
@@ -49,9 +43,9 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
 
             let inPerson = "OUR_LOCATION";
             let byPhone = "VID_CONFERENCE";
-            // let location = location_name;
 
-            // LACode = "a1b5f000000eT4OAAU";
+            sendEmail(first_name, last_name, email, mobile_phone, language_site, leadID, comment);
+
             if (location_name != "National") {
                 fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
             } else {
@@ -107,4 +101,20 @@ const getLocation = (location) => {
     }
 
     return code;
+}
+
+const sendEmail = (first_name, last_name, email, mobile_phone, language_site, leadID, comment) => {
+    $.ajax({
+        type: 'POST',
+        url: 'sendEmail.php',
+        data: {
+            "FirstName": first_name,
+            "LastName": last_name,
+            "Email": email,
+            "MobilePhone": mobile_phone,
+            "Language": language_site,
+            "leadID": leadID,
+            "question": comment
+        }
+    });
 }
