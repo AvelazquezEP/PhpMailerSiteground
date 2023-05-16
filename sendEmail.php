@@ -26,6 +26,10 @@ try {
     $leadID = $_POST['leadID'];
     $question = $_POST['question'];
 
+    if(empty($question)){
+        $question = "-";
+    }
+
     // $strlanguage = "Spanish";
     // $stremail = "avelazquez2873@LosAngelesImmigration.onmicrosoft.com";
     // $strName = "Test";

@@ -16,7 +16,7 @@ const sendData = () => {
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
-const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment) => {
+const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
     // let urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
     $.ajax({
         type: 'POST',
