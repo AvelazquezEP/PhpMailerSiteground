@@ -13,7 +13,16 @@ const sendData = () => {
     let comment = document.getElementById("message").value;
     let sms = document.getElementById("00N5f00000SB1XU").value;
 
-    createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+    var mobileInput = document.getElementById('mobileInput').innerHTML = 'debe ser de 10 digitos';
+    if (mobilePhone.length < 10) {
+        log(`Tel: ${mobilePhone} NO es de 10 digitos`);
+        document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+        document.getElementById('mobileInput').style.color = "#F93C17";
+    } else {
+        createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+        document.getElementById('mobileInput').innerHTML = '';
+        // log(`Tel: ${mobilePhone} SI cumple con los 10 digitos`);
+    }
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {

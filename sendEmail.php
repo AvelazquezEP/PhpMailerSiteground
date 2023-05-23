@@ -75,7 +75,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     // $mail->setFrom('avelazquez2873@LosAngelesImmigration.onmicrosoft.com');
 
     // Correos a quienes le llegan
-    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content

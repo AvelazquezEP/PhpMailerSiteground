@@ -857,9 +857,12 @@
                             <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900">
                                 Mobile Phone
                             </label>
-                            <input id="mobile" maxlength="40" name="mobile" size="20" type="text" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
+                            <input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                            class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg
                             focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                                placeholder="(855) 662-2772" required>
+                                placeholder="8556622772" required id="mobile" name="mobile" size="20"
+                                pattern="\d*" maxlength="10"/>
+                            <span id="mobileInput" style="color: red;"></span>
                         </div>
 
                         <div>
@@ -872,7 +875,7 @@
                                 <option value="">--None--</option>
                                 <option value="Chicago">Chicago</option>
                                 <option value="Los Angeles">Los Angeles</option>
-                                <!-- <option value="National">National</option> -->
+                                <option value="National">National</option>
                                 <option value="Orange County">Orange County</option>
                                 <option value="San Diego">San Diego</option>
                                 <option value="San Marcos">San Marcos</option>
