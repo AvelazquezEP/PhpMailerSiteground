@@ -1,4 +1,4 @@
-<!-- CRON FILE / 2 TIMES X DAY (5 AM/PM) -->
+<!-- CRON FILE / every 3 hours (8am, 11pm, 2pm, 5pm, 8pm, 11pm, 2am, 5am) -->
 <?php
 
 session_start();

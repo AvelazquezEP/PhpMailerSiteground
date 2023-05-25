@@ -75,12 +75,14 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     // $mail->setFrom('avelazquez2873@LosAngelesImmigration.onmicrosoft.com');
 
     // Correos a quienes le llegan
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-    $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
+    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
+    $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
+    $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
 
     //Content
     $mail->isHTML(true);
-    $mail->Subject = 'Someone has opted in to form AEP Google PPC';
+    $mail->Subject = 'Someone has opted in to contac form web site';
     $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
     $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada
 
