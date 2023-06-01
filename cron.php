@@ -42,7 +42,11 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 
     $new_token = strval($jsonArrayResponse->access_token);
 
-    $date = date('Y-m-d H:i:s.uO');
+    // $date = date('Y-m-d H:i:s.uO');
+
+    $date = new DateTime("now", new DateTimeZone('GMT-5') );
+    $date->format('Y-m-d H:i:s');
+
 
     saveToken($new_token, $date);
 
@@ -62,13 +66,8 @@ function saveToken($tokenString, $dateToken)
 
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
-
-    // $table_name = 'tokenacess';
-
-    // INSERT INTO PUBLIC.juntas(dateof,topic,description) VALUES(24/05/2023, "Pokemon", "Pikachu is the choice for the best pokemon in this meet");
-    // $sql = "INSERT INTO PUBLIC." . $this->table_name . "(dateof,topic,description) " . "VALUES('" . $this->cleanData($_POST['dateof']) . "','" . $this->cleanData($_POST['topic']) . "','" . $this->cleanData($_POST['description']) . "')";
-    $sql = "INSERT INTO tokenacess(new_token, newToken_date) " . "VALUES('" . cleanData($tokenString) . "','" . cleanData($dateToken) . "')";
-    // $sql = "INSERT INTO tokenacess(new_token, newToken_date, old_token) " . "VALUES('" . cleanData($tokenString) . "','" . cleanData($dateToken) . "','" . cleanData($dateToken) . "')";
+        
+    $sql = "INSERT INTO tokenacess(new_token, newToken_date) " . "VALUES('" . cleanData($tokenString) . "','" . cleanData($dateToken) . "')";    
     return pg_affected_rows(pg_query($sql));
 }
 
