@@ -42,18 +42,16 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 
     $new_token = strval($jsonArrayResponse->access_token);
 
-    // $date = date('Y-m-d H:i:s.uO');
+    $date = date('Y-m-d H:i:s.uO');
 
-    $date = new DateTime("now", new DateTimeZone('GMT-5') );
-    $date->format('Y-m-d H:i:s');
+    // $date = new DateTime("now", new DateTimeZone('GMT-5') );
+    // $date->format('Y-m-d H:i:s');
 
 
     saveToken($new_token, $date);
 
     return $jsonArrayResponse;
 }
-
-
 
 function saveToken($tokenString, $dateToken)
 {
