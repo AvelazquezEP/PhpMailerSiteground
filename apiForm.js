@@ -1,21 +1,41 @@
 // CONSOLE LOG SHORT
 var log = console.log;
 
-const sendData = () => {
-    let firstName = document.getElementById("first_name").value;
-    let lastName = document.getElementById("last_name").value;
-    let email = document.getElementById("email").value;
-    let mobilePhone = document.getElementById("mobile").value;
-    let location = document.getElementById("00N5f00000SB1X0").value;
-    let language = document.getElementById("00N5f00000SB1Ws").value;
-    // let smsOption = document.getElementById("00N5f00000SB1XU").value;
-    let meetingType = document.getElementById("meetingTypePerson").value;
-    let comment = document.getElementById("message").value;
-    let sms = document.getElementById("00N5f00000SB1XU").value;
 
-    var mobileInput = document.getElementById('mobileInput').innerHTML = 'debe ser de 10 digitos';
+$(document).ready(function () {
+    $("#ButtonSend").on("click", function () {
+        $(this).attr("disabled", "disabled");
+        let firstName = document.getElementById("first_name").value;
+        let lastName = document.getElementById("last_name").value;
+        let email = document.getElementById("email").value;
+        let mobilePhone = document.getElementById("mobile").value;
+        let location = document.getElementById("00N5f00000SB1X0").value;
+        let language = document.getElementById("00N5f00000SB1Ws").value;
+        // let smsOption = document.getElementById("00N5f00000SB1XU").value;
+        let meetingType = document.getElementById("meetingTypePerson").value;
+        let comment = document.getElementById("message").value;
+        let sms = document.getElementById("00N5f00000SB1XU").value;
+
+        sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
+
+    });
+});
+
+const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
+    // let firstName = document.getElementById("first_name").value;
+    // let lastName = document.getElementById("last_name").value;
+    // let email = document.getElementById("email").value;
+    // let mobilePhone = document.getElementById("mobile").value;
+    // let location = document.getElementById("00N5f00000SB1X0").value;
+    // let language = document.getElementById("00N5f00000SB1Ws").value;
+    // // let smsOption = document.getElementById("00N5f00000SB1XU").value;
+    // let meetingType = document.getElementById("meetingTypePerson").value;
+    // let comment = document.getElementById("message").value;
+    // let sms = document.getElementById("00N5f00000SB1XU").value;
+
+    // var mobileInput = document.getElementById('mobileInput').innerHTML = 'debe ser de 10 digitos';
     if (mobilePhone.length < 10) {
-        log(`Tel: ${mobilePhone} NO es de 10 digitos`);
+        // log(`Tel: ${mobilePhone} NO es de 10 digitos`);
         document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
         document.getElementById('mobileInput').style.color = "#F93C17";
     } else {
@@ -23,6 +43,9 @@ const sendData = () => {
         document.getElementById('mobileInput').innerHTML = '';
         // log(`Tel: ${mobilePhone} SI cumple con los 10 digitos`);
     }
+
+    // PARA EL FUNCIONAMIENTO DEL DOBLE CLICK
+    setTimeout('$("#ButtonSend").removeAttr("disabled")', 2800);
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
