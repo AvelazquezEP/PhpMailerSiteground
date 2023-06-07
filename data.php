@@ -183,7 +183,7 @@ try {
 
 } catch (Exception $e) {
     // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
-    header("Location: https://ericp138.sg-host.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
+    header("Location: https://abogadoericprice.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
 }
 
 ?>

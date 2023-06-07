@@ -46,5 +46,28 @@ body {
 
 .testimonials>figure:nth-child(odd) {
     background-color: white;
-    /* background-color: rgb(233, 166, 103); */
+    background-color: rgb(233, 166, 103);
 } */
+
+.circle {
+  display: inline-block;
+  margin-left: 55px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  /* border: 2px solid black; */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  align-items: center; 
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sendButton{
+    background-color: #ff5e00;
+}
+
+.sendButton:hover{
+    background-color: #ff8239;
+}

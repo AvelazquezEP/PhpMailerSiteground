@@ -56,11 +56,17 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 function saveToken($tokenString, $dateToken)
 {
     // include_once('connection.inc.php');
-    $host = "ericp138.sg-host.com";
+    // $host = "ericp138.sg-host.com";
+    // $port = "5432";
+    // $dbname = "dbhxe3qcvkv7wx";
+    // $user = "uexeeqopvpkgb";
+    // $password = "9gXq&(jy1)b4";
+
+    $host = "abogadoericprice.com";
     $port = "5432";
-    $dbname = "dbhxe3qcvkv7wx";
-    $user = "uexeeqopvpkgb";
-    $password = "9gXq&(jy1)b4";
+    $dbname = "dbezl1uquldojv";
+    $user = "uhgpgzxv2hhak";
+    $password = "700Flower!";
 
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');

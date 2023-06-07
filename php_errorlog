@@ -85,3 +85,13 @@ Stack trace:
 [20-Apr-2023 00:17:35 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/customer/www/ericp138.sg-host.com/public_html/formTest.php on line 227
 [09-May-2023 22:13:29 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/customer/www/ericp138.sg-host.com/public_html/apiData.php on line 55
 [09-May-2023 22:14:16 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/customer/www/ericp138.sg-host.com/public_html/apiData.php on line 55
+[02-Jun-2023 22:44:42 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/abogadoericprice.com/public_html/sendEmail.php:50
+Stack trace:
+#0 /home/customer/www/abogadoericprice.com/public_html/sendEmail.php(40): sendEmail('Spanish', 'test10@gmail.ne...', 'Test', '10', '2334546791', 'Esta es una pru...', '00Q5f00000RhCAS...')
+#1 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/sendEmail.php on line 50
+[02-Jun-2023 23:32:00 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/abogadoericprice.com/public_html/sendEmail.php:50
+Stack trace:
+#0 /home/customer/www/abogadoericprice.com/public_html/sendEmail.php(40): sendEmail(NULL, NULL, NULL, NULL, NULL, '-', NULL)
+#1 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/sendEmail.php on line 50
